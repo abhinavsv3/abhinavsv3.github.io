@@ -1,0 +1,50 @@
+---
+layout: default
+title: TSHN ~ Top Stories of Hacker News in last 24 hours
+zip_url: https://github.com/sushant-hiray/tshn/zipball/master
+issue_url: https://github.com/sushant-hiray/tshn/issues/new
+repository_url: http://github.com/sushant-hiray/tshn
+---
+
+<h1>TSHN ~ Top Stories of Hacker News in last 24 hours</h1>
+<hr/>
+<h2>What is this?</h2>
+Pretty simple. Every 15 minutes, TSHN scrapes the first page of Hacker News and generates a new page containing the top stories from the past 24 hours sorted in descending order by overall points.
+You can checkout a quick demo <a href="http://wncc-iitb.org/tshn"> here </a>
+<br/><br/>
+
+<h2> How do I make this work? </h2>
+<ul>
+	<li>Clone the repo <a href="http://github.com/sushant-hiray/tshn"> here </a></li>
+	<li>Check out <code>run.sh</code> for a sample bash script. Change the paths accordingly for make your own bash script.</li>
+	<li>Change the parent folder path in <code>scrape.py</code> </li>
+	<li>Now add a cron task as follows:
+		<ul>
+			<li>Type <code>crontab -e </code> in terminal </li>
+			<li> Append the following line into the opened file: <code> */15 * * * * {path to run.sh} </code> </li>
+			<li>Once the cron task is set right, the script will scrape front page of HN every 15 minutes and update the top stories data accordingly.</li>
+		</ul>
+	</li>
+</ul>
+
+<h2> Why the hell would you want to do that? </h2>
+I was bored as we were having our winter holidays, so I started reading about <a href="http://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a>. I was simultaneously checking out HN in a different tab. <br/>So I thought HN could be a nice place to start scraping. This is pretty useful as I keep checking on HN quite a few times during the whole day, having a sorted view for posts helps me read the interesting stuff first ^_^ <br/>
+Also a friend pointed out, it is particularly useful in the morning too check on interesting posts, which could have gone buried while you were sleeping! 
+
+<br/><br/>
+
+<h2>How'd you do it? </h2>
+Pretty simple! The code's up on <a href="https://github.com/sushant-hiray/tshn">GitHub</a>.<br/>
+As I had mentioned before take a look at <a href="http://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a> and see how you can go about scraping the relevant data.<br/>
+Once you are done with this, rest is just simple python script to combine the scraped data.<br/>
+Thanks to <a href="http://www.getbootstrap.com">Bootstrap</a> for the minimal UI.<br/>
+Make ajax calls to fetch the data.<br/>
+That's it.<br/><br/>
+
+<h2>Further Improvements </h2>
+<ul>
+	<li>Currently I'm reloading the page every 15 min. It ain't the right way ofcourse, a simple improvement would be to make ajax calls every 15 min using <code>set timeout</code></li>
+	<li>Also I'm currently storing 96 files corresponding to dump for every 15 min slot in last 24 hours. While processing I append all the files together and then sort during the ajax call. This can be made efficient by making sure the final json file has only unique entries.</li>
+	<li>If you feel any further issue feel free to <a href="http://github.com/sushant-hiray/tshn/">fork</a> it and fix it.</li>
+</ul>
+
