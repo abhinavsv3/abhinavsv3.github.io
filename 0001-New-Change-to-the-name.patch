@@ -1,0 +1,27 @@
+From 58bbd2cbd33d1b3d66f59b9744c5f239b3f3e3da Mon Sep 17 00:00:00 2001
+From: Abhinav <abhinavsv3@gmail.com>
+Date: Wed, 5 Mar 2014 16:33:46 +0530
+Subject: [PATCH] New Change to the name
+
+---
+ _layouts/default.html | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/_layouts/default.html b/_layouts/default.html
+index 558b057..f54713e 100644
+--- a/_layouts/default.html
++++ b/_layouts/default.html
+@@ -66,7 +66,9 @@
+ }(document, 'script', 'facebook-jssdk'));</script>
+     <div class="wrapper">
+       <header>
+-        <h1><a href="/">Abhinav S V</a></h1>
++        <h1>
++        <a href="/">asday</a>
++        </h1>
+         <!-- <p>Where's Danish now?</p> -->
+ 
+         <!-- <h3>The Goods</h3> -->
+-- 
+1.8.3.2
+
