@@ -1,0 +1,106 @@
+From 90555637cdc853ef95da4aedb830becc0ef06074 Mon Sep 17 00:00:00 2001
+From: Abhinav <abhinavsv3@gmail.com>
+Date: Wed, 5 Mar 2014 16:43:38 +0530
+Subject: [PATCH] New Name
+
+---
+ 0001-New-Change-to-the-name.patch | 27 +++++++++++++++++++++++++++
+ _layouts/default.html             |  7 +------
+ _layouts/no-disqus.html           |  2 +-
+ index.html                        |  2 +-
+ 4 files changed, 30 insertions(+), 8 deletions(-)
+ create mode 100644 0001-New-Change-to-the-name.patch
+
+diff --git a/0001-New-Change-to-the-name.patch b/0001-New-Change-to-the-name.patch
+new file mode 100644
+index 0000000..a3f40a3
+--- /dev/null
++++ b/0001-New-Change-to-the-name.patch
+@@ -0,0 +1,27 @@
++From 58bbd2cbd33d1b3d66f59b9744c5f239b3f3e3da Mon Sep 17 00:00:00 2001
++From: Abhinav <abhinavsv3@gmail.com>
++Date: Wed, 5 Mar 2014 16:33:46 +0530
++Subject: [PATCH] New Change to the name
++
++---
++ _layouts/default.html | 4 +++-
++ 1 file changed, 3 insertions(+), 1 deletion(-)
++
++diff --git a/_layouts/default.html b/_layouts/default.html
++index 558b057..f54713e 100644
++--- a/_layouts/default.html
+++++ b/_layouts/default.html
++@@ -66,7 +66,9 @@
++ }(document, 'script', 'facebook-jssdk'));</script>
++     <div class="wrapper">
++       <header>
++-        <h1><a href="/">Abhinav S V</a></h1>
+++        <h1>
+++        <a href="/">asday</a>
+++        </h1>
++         <!-- <p>Where's Danish now?</p> -->
++ 
++         <!-- <h3>The Goods</h3> -->
++-- 
++1.8.3.2
++
+diff --git a/_layouts/default.html b/_layouts/default.html
+index f54713e..235a6a9 100644
+--- a/_layouts/default.html
++++ b/_layouts/default.html
+@@ -67,7 +67,7 @@
+     <div class="wrapper">
+       <header>
+         <h1>
+-        <a href="/">asday</a>
++        <a href="/">Abhinav S V</a>
+         </h1>
+         <!-- <p>Where's Danish now?</p> -->
+ 
+@@ -94,9 +94,7 @@
+         <br/>
+         <h3>Follow Me On</h3>
+         <p class="view"><a href="https://github.com/abhinavsv3" target="tab">GitHub<small>If social coding is your thing</small></a></li>
+-        <p class="view"><a href="https://twitter.com/SushantHiray" target="tab">Twitter<small>If you tweet</small></a></li>
+         <p class="view"><a href="https://facebook.com/sushant.hiray" target="tab">FB<small>If you wanna befriend me!</small></a></li> 
+-        <p class="view"><a href="https://flattr.com/submit/auto?user_id=sushant.hiray&url=http%3A%2F%2Fabhinavsv3.github.io" target="_blank">Flattr<small>If you like my work!</small></a></li>
+           
+       </header>
+       <section id="main">
+@@ -124,9 +122,6 @@ all scripts are at the bottom.
+ 
+             <div class="g-plusone" data-size="medium" data-href="http://abhinavsv3.github.io{{ page.url }}"></div>
+ 
+-            <a href="http://twitter.com/share" class="twitter-share-button" data-via="SushantHiray" data-related="SushantHiray"
+-                data-url="http://abhinavsv3.github.io{{ page.url }}" data-text="{{ page.title | escape }}">Tweet</a>
+-
+             <div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://abhinavsv3.github.io{{ page.url }}"></div>
+ 
+         </div>
+diff --git a/_layouts/no-disqus.html b/_layouts/no-disqus.html
+index 20909cc..40f7e74 100644
+--- a/_layouts/no-disqus.html
++++ b/_layouts/no-disqus.html
+@@ -58,7 +58,7 @@
+   <body>
+     <div class="wrapper">
+       <header>
+-        <h1><a href="/">Sushant Hiray</a></h1>
++        <h1><a href="/">Abhinav S V </a></h1>
+         <!-- <p>Where's Danish now?</p> -->
+ 
+         <!-- <h3>The Goods</h3> -->
+diff --git a/index.html b/index.html
+index 378b931..f22fe13 100644
+--- a/index.html
++++ b/index.html
+@@ -4,5 +4,5 @@ title: abhinavsv3.github.io ~ Abhinav S V
+ ---
+ 
+ <img src="/images/current.jpg" alt="color photo ftl" />
+-<p>My Name is Abhinav . I live in Thanjavur. I study at <a href="https://www.sastra.edu">SASTRA University , Thanjavur </a> majoring in Computer Science. That means I code, mostly in <a href="http://www.python.org/">Python</a>. 
++<p>My Name is Abhinav . I live in Thanjavur. I study at <a href="https://www.sastra.edu">SASTRA University , Thanjavur </a> majoring in Computer Science. That means I code, mostly in C++
+ I'm <em>abhinavsv3</em> on most services.</p>
+-- 
+1.8.3.2
+
