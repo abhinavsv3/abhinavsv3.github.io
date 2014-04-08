@@ -114,7 +114,7 @@ Follow the following steps :
 10. Now let us see the patched hello.c
 	abhinav@abhinav-SVE15137CXW:~/homework/linuxibm/upstream$ cat hello.c
 	
-	#include<stdio.h>
+	# include<stdio.h>
 	int main(){
 		printf("Hello SASTRA");
 		return 0;
