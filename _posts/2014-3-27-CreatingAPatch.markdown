@@ -5,6 +5,8 @@ title: "CREATING A PATCH - A SIMPLE DEMONSTRATION"
 Given below is a simple demostration of creating a patch for a file .
 
 Follow the following steps :
+
+
 1. Create 2 folders my_copy and upstream in the same directory.
 
 	abhinav@abhinav-SVE15137CXW:~/homework/linuxibm$ ls -l
