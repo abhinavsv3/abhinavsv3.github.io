@@ -55,10 +55,12 @@ Follow the following steps :
 		return 0;
 	}
 7. Let us create a patch
+
    A .  Create a difference of the two files : 
 	The following is the diff output of the 2 file hello_world.c and hello.c
  
 	abhinav@abhinav-SVE15137CXW:~/homework/linuxibm/my_copy$ diff -Naurp hello_org.c hello.c
+	
 	--- hello_org.c	2014-02-14 13:48:31.039899000 +0530
 	+++ hello.c	2014-02-14 13:55:51.939895038 +0530
 	@@ -1,5 +1,5 @@
@@ -72,9 +74,11 @@ Follow the following steps :
    B .  Create a patch file by redirecting the output of the  to my.patch file  .  we will send only the patch file ,
 
 	abhinav@abhinav-SVE15137CXW:~/homework/linuxibm/my_copy$ diff -Naurp hello_org.c hello.c > my.patch
+	
 	abhinav@abhinav-SVE15137CXW:~/homework/linuxibm/my_copy$ ls
 	hello.c  hello_org.c  my.patch
 
+   
    C. patch file looks like this 
 
 	abhinav@abhinav-SVE15137CXW:~/homework/linuxibm/my_copy$ cat my.patch
@@ -87,7 +91,7 @@ Follow the following steps :
 	+	printf("Hello SASTRA");
 	 	return 0;
 	 }
-8.SEND the patch to upstream ; here we copy it 
+8. SEND the patch to upstream ; here we copy it 
 
 	abhinav@abhinav-SVE15137CXW:~/homework/linuxibm/my_copy$ cp my.patch ../upstream/
 
@@ -109,6 +113,7 @@ Follow the following steps :
 
 10. Now let us see the patched hello.c
 	abhinav@abhinav-SVE15137CXW:~/homework/linuxibm/upstream$ cat hello.c
+	
 	#include<stdio.h>
 	int main(){
 		printf("Hello SASTRA");
