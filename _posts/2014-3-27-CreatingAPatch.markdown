@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: "CREATING A PATCH - A SIMPLE DEMONSTRATION"
+title: "Creating a Patch - a simple demonstration"
 ---
 Given below is a simple demostration of creating a patch for a file .
 
