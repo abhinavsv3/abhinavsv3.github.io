@@ -1,0 +1,25 @@
+<html>
+<head>
+  <link rel="stylesheet" href="http://abhinavsv3.github.io/javascriptsal/alchemy.min.css"/>
+</head>
+<body>
+  <div class="alchemy" id="alchemy"></div>
+
+  <script src="http://abhinavsv3.github.io/javascriptsal/alchemy.min1.js"></script>
+  <script type="text/javascript">
+      var config = {
+      dataSource: 'http://abhinavsv3.github.io/jstest/data/charlize.json',
+      forceLocked: false,
+      nodeTypes: {"node_type":[ "Maintainer",
+                                "Contributor"]},
+      nodeCaption: function(node){ 
+        return node.caption + " " + node.fun_fact;}
+      };
+
+    alchemy = new Alchemy(config)
+    </script>
+  </body>
+</html>
+
+
+
