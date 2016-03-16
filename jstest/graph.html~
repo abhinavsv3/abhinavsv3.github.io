@@ -8,7 +8,7 @@
   <script src="http://abhinavsv3.github.io/javascriptsal/alchemy.min.js"></script>
   <script type="text/javascript">
         var config = {
-            dataSource: 'data/charlize.json',
+            dataSource: 'http://abhinavsv3.github.io/jsonss/graphson.json',
             };
 
         alchemy = new Alchemy(config)
