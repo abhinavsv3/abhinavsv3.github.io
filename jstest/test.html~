@@ -1,6 +1,6 @@
 <html>
 <head>
-  <link rel="stylesheet" href="http://cdn.graphalchemist.com/alchemy.min.css"/>
+  <link rel="stylesheet" href="http://abhinavsv3.github.io/javascriptsal/alchemy.min.css"/>
 </head>
 <body>
   <div class="alchemy" id="alchemy"></div>
