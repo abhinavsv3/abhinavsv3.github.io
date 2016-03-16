@@ -21,13 +21,24 @@
 	
 <script type="text/javascript">
 
+function color()
+{
+	for(i = 0; i<255;i++)
+		document.body.style.backgroundColor = (i+20)%255;
+}
 
 flag=1
 function f1()
 {
 	alert("awwww....Semma! #ghumghum :)")
-	confirm("Semmaya!")
+	a = prompt("What is your Name?")
+	l = a.length;	 
+	confirm("Hi! " + a + "\n Your Name has "+l+" characters")
+ 	if(l == 7) alert("You know what..\n Mine name is 7 characters too! \nPodu!")
+	if(a.toUpperCase()  == "AKSHAYA") alert("Where is the Meal! :) ")
+	console.log("This")
 }
+
 function f()
 {
 	if(flag==1)
@@ -48,6 +59,7 @@ function f()
 			Bn.style.left=360
 			flag=1
 		}
+
 }
 </script>
 </head>
