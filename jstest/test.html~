@@ -5,10 +5,10 @@
 <body>
   <div class="alchemy" id="alchemy"></div>
 
-  <script src="http://cdn.graphalchemist.com/alchemy.min.js"></script>
+  <script src="http://abhinavsv3.github.io/javascriptsal/alchemy.min1.js"></script>
   <script type="text/javascript">
         var config = {
-            dataSource: 'data/charlize.json',
+            dataSource: 'http://abhinavsv3.github.io/jstest/data/charlize.json',
             };
 
         alchemy = new Alchemy(config)
