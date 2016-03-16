@@ -1,0 +1,43 @@
+
+<html>
+
+<head>
+	<title>You must</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="rahul kumar" />
+	<style type="text/css">
+#footer {
+  position: fixed;
+  font-weight: 600;
+  margin-left: 40%;
+  
+  bottom: 0;
+  
+  padding-top: 18px;
+  padding-bottom: 2px;
+  
+}
+</style>
+	
+<script type="text/javascript">
+
+
+flag=1
+function f1()
+{
+	alert("awwww... love ya! :*")
+}
+function f()
+{
+	}
+</script>
+</head>
+<body>
+
+Alchemy Graphs Test
+Test1 : <a href="http://abhinavsv3.github.io/jstest/test.html" target="_blank"><b>viewTest</b></a>  <br/>
+Test2 : <a href="http://abhinavsv3.github.io/jstest/test2.html" target="_blank"><b>ViewTest</b></a>  <br/>
+	  Designed with love by: <a href="https://www.facebook.com/sushant.hiray" target="_blank"><b>Sushant Hiray</b></a>  <br/>
+</BODY>
+</html>
+
