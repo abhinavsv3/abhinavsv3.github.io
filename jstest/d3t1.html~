@@ -14,7 +14,7 @@
 
 </style>
 <body>
-<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="http://abhinavsv3.github.io/javascriptsal/d3/d3.v3.min.js"></script>
 <script>
 
 var width = 960,
