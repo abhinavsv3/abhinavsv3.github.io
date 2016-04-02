@@ -40,7 +40,9 @@ Test5 : Big Graph
 <a href="http://abhinavsv3.github.io/jstest/test5.html" target="_blank"><b>ViewTest</b></a>  <br/> <br/>
 Test6 : Graph with relatednessss
 <a href="http://abhinavsv3.github.io/jstest/test6.html" target="_blank"><b>ViewTest</b></a>  <br/> <br/>
-
+Test7 : Graph with relatednessss by the JSON Object is created by this mild(in the sense there is no loop and the variables are hard coded) python code
+<a href="http://abhinavsv3.github.io/pythoncodes/createjson.py" target="_blank"><b>Code</b></a>  <br/> <br/>  Test is here:
+<a href="http://abhinavsv3.github.io/jstest/test7.html" target="_blank"><b>ViewTest</b></a>  <br/> <br/>
 
 
 	<div id="footer">  Designed by: <a href="http://abhinavsv3.github.io/" target="_blank"><b>Abhinav</b></a>  <br/>
