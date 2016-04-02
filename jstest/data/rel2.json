@@ -1,16 +1,16 @@
 {
     "nodes": [
         {
-            "cluster": 1, 
-            "title": "Abc", 
-            "id": 1, 
-            "relatedness": 0.5
+            "cluster": 2, 
+            "relatedness": 0.5, 
+            "id": 2, 
+            "title": "two"
         }, 
         {
             "cluster": 2, 
-            "title": "two", 
+            "relatedness": 0.5, 
             "id": 2, 
-            "relatedness": 0.5
+            "title": "two"
         }
     ], 
     "edges": [
