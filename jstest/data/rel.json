@@ -1,23 +1,23 @@
 {
     "nodes": [
         {
-            "cluster": 1, 
+            "cluster": "1", 
             "title": "Abc", 
-            "id": 1, 
-            "relatedness": 0.5
+            "id": "1", 
+            "relatedness": "0.5"
         }, 
         {
-            "cluster": 2, 
+            "cluster": "2", 
             "title": "two", 
-            "id": 2, 
-            "relatedness": 0.5
+            "id": "2", 
+            "relatedness": "0.5"
         }
     ], 
     "edges": [
         {
-            "source": 1, 
-            "target": 2, 
-            "relatedness": 0.5
+            "source": "1", 
+            "target": "2", 
+            "relatedness": "0.5"
         }
     ]
 }
