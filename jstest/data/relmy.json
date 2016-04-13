@@ -1,7 +1,7 @@
 {
   "nodes": [
     {
-      "id": "-1",
+      "id": "0",
       "root": true,
       "type": "philosopher",
       "title": "Pythagoras"
@@ -25,25 +25,25 @@
       "relatedness": "0.5738613572915624"
     },
        {
-      "id": "-2",
+      "id": "1",
       "root": true,
       "type": "philosopher",
       "title": "Heraclitus"
     },
     {
-      "id": "-3",
+      "id": "2",
       "root": true,
       "type": "philosopher",
       "title": "Gorgias"
     },
     {
-      "id": "-4",
+      "id": "3",
       "root": true,
       "type": "philosopher",
       "title": "Zeno"
     },
     {
-      "id": "-5",
+      "id": "4",
       "root": true,
       "type": "philosopher",
       "title": "Democritus"
@@ -51,22 +51,22 @@
   ],
   "edges": [
     {
-      "source": "-1",
+      "source": "0",
       "target": "2110950",
       "relatedness": "0.6416031476416721"
     },
     {
-      "source": "-1",
+      "source": "0",
       "target": "1",
       "relatedness": "0.6605042722871506"
     },
     {
-      "source": "-1",
+      "source": "0",
       "target": "842",
       "relatedness": "0.5738613572915624"
     },
     {
-      "source": "-5",
+      "source": "4",
       "target": "842",
       "relatedness": "0.8104209407476685"
     }
