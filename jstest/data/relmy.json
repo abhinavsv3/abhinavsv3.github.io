@@ -13,15 +13,15 @@
             "relatedness": "0.5"
         }
         {
-            "cluster": "1", 
+            "cluster": "3", 
             "title": "Abcd", 
-            "id": "12", 
+            "id": "3", 
             "relatedness": "0.5"
         },
         {
-            "cluster": "2", 
+            "cluster": "4", 
             "title": "Abcde", 
-            "id": "1", 
+            "id": "4", 
             "relatedness": "0.7"
         }
     ], 
@@ -32,13 +32,13 @@
             "relatedness": "0.5"
         }
         {
-            "source": "12", 
-            "target": "2", 
+            "source": "2", 
+            "target": "3", 
             "relatedness": "0.5"
         }
         {
-            "source": "1", 
-            "target": "12", 
+            "source": "3", 
+            "target": "4", 
             "relatedness": "0.5"
         }
     ]
