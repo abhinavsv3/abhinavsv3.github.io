@@ -1,6 +1,12 @@
 {
   "nodes": [
     {
+      "id": "0",
+      "root": true,
+      "type": "philosopher",
+      "title": "Pythagoras"
+    },
+ {
       "id": "2110950",
       "cluster": "1",
       "title": "A History of Western Philosophy",
@@ -18,13 +24,7 @@
       "title": "Aegean Sea",
       "relatedness": "0.5738613572915624"
     },
-    {
-      "id": "0",
-      "root": true,
-      "type": "philosopher",
-      "title": "Pythagoras"
-    },
-    {
+       {
       "id": "1",
       "root": true,
       "type": "philosopher",
