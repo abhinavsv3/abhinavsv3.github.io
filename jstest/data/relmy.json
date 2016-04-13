@@ -1,34 +1,33 @@
 {
     "nodes": [
         {
-            "cluster": "1", 
-            "title": "One", 
-            "id": "1", 
-            "relatedness": "0.5"
+            "id": "1",
+      "cluster": "1",
+      "title": "A History of Western Philosophy",
+      "relatedness": "0.6416031476416721"
         }, 
         {
-            "cluster": "2", 
-            "title": "Two", 
-            "id": "2", 
-            "relatedness": "0.5"
+            "id": "2",
+      "cluster": "1",
+      "title": "Abaris the Hyperborean",
+      "relatedness": "0.6605042722871506"
         }
-        {
-            "cluster": "3", 
-            "title": "Three", 
-            "id": "3", 
-            "relatedness": "0.5"
+        {"id": "3",
+      "cluster": "1",
+      "title": "Alchemy",
+      "relatedness": "0.6613786186196584"
         },
-        {
-            "cluster": "4", 
-            "title": "Four", 
-            "id": "4", 
-            "relatedness": "0.7"
+        { 
+	"id": "4",
+      "cluster": "1",
+      "title": "Ancient Greece",
+      "relatedness": "0.6247677116583654"
         }
     ], 
     "edges": [
         {
-            "source": "2", 
-            "target": "3", 
+            "source": "1", 
+            "target": "2", 
             "relatedness": "0.5"
         }
         {
