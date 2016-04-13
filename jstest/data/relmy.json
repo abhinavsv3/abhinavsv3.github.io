@@ -31,5 +31,15 @@
             "target": "2", 
             "relatedness": "0.5"
         }
+        {
+            "source": "12", 
+            "target": "2", 
+            "relatedness": "0.5"
+        }
+        {
+            "source": "1", 
+            "target": "12", 
+            "relatedness": "0.5"
+        }
     ]
 }
