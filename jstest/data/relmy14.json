@@ -1,0 +1,135 @@
+{
+    "nodes": [
+        {
+            "root": true, 
+            "type": "0", 
+            "id": "0", 
+            "title": "0"
+        }, 
+        {
+            "cluster": "0", 
+            "title": "2", 
+            "id": "2", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "cluster": "0", 
+            "title": "4", 
+            "id": "4", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "cluster": "0", 
+            "title": "5", 
+            "id": "5", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "cluster": "0", 
+            "title": "8", 
+            "id": "8", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "root": true, 
+            "type": "1", 
+            "id": "1", 
+            "title": "1"
+        }, 
+        {
+            "cluster": "1", 
+            "title": "3", 
+            "id": "3", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "cluster": "1", 
+            "title": "6", 
+            "id": "6", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "cluster": "1", 
+            "title": "7", 
+            "id": "7", 
+            "relatedness": "0.5"
+        }
+    ], 
+    "edges": [
+        {
+            "source": "0", 
+            "target": "2", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "source": "0", 
+            "target": "4", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "source": "0", 
+            "target": "5", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "source": "0", 
+            "target": "8", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "source": "1", 
+            "target": "3", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "source": "1", 
+            "target": "6", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "source": "1", 
+            "target": "7", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "source": "2", 
+            "target": "3", 
+            "relatedness": "1"
+        }, 
+        {
+            "source": "2", 
+            "target": "4", 
+            "relatedness": "1"
+        }, 
+        {
+            "source": "2", 
+            "target": "8", 
+            "relatedness": "1"
+        }, 
+        {
+            "source": "3", 
+            "target": "2", 
+            "relatedness": "1"
+        }, 
+        {
+            "source": "3", 
+            "target": "6", 
+            "relatedness": "1"
+        }, 
+        {
+            "source": "3", 
+            "target": "7", 
+            "relatedness": "1"
+        }, 
+        {
+            "source": "4", 
+            "target": "2", 
+            "relatedness": "1"
+        }, 
+        {
+            "source": "4", 
+            "target": "5", 
+            "relatedness": "1"
+        }
+    ]
+}
