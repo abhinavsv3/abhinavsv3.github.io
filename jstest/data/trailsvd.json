@@ -1,0 +1,39 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "cluster": "1",
+      "title": "A History of Western Philosophy",
+      "relatedness": "0.6416031476416721"
+    },
+    {
+      "id": "2",
+      "cluster": "1",
+      "title": "Abaris the Hyperborean",
+      "relatedness": "0.6605042722871506"
+    },
+    {
+      "id": "3",
+      "cluster": "1",
+      "title": "Aegean Sea",
+      "relatedness": "0.5738613572915624"
+    }
+  ],
+  "edges": [
+    {
+      "source": "2",
+      "target": "1",
+      "relatedness": "0.6416031476416721"
+    },
+    {
+      "source": "3",
+      "target": "1",
+      "relatedness": "0.6605042722871506"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "relatedness": "0.5738613572915624"
+    }
+  ]
+}

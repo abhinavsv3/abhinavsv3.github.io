@@ -1,0 +1,188 @@
+{
+    "nodes": [
+        {
+            "root": true, 
+            "type": "0", 
+            "id": "0", 
+            "title": "0"
+        }, 
+        {
+            "cluster": "0", 
+            "title": "8", 
+            "id": "8", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "cluster": "0", 
+            "title": "12", 
+            "id": "12", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "cluster": "0", 
+            "title": "13", 
+            "id": "13", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "root": true, 
+            "type": "1", 
+            "id": "1", 
+            "title": "1"
+        }, 
+        {
+            "cluster": "1", 
+            "title": "7", 
+            "id": "7", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "cluster": "1", 
+            "title": "14", 
+            "id": "14", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "cluster": "1", 
+            "title": "15", 
+            "id": "15", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "cluster": "1", 
+            "title": "21", 
+            "id": "21", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "root": true, 
+            "type": "2", 
+            "id": "2", 
+            "title": "2"
+        }, 
+        {
+            "cluster": "2", 
+            "title": "10", 
+            "id": "10", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "cluster": "2", 
+            "title": "16", 
+            "id": "16", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "root": true, 
+            "type": "3", 
+            "id": "3", 
+            "title": "3"
+        }, 
+        {
+            "cluster": "3", 
+            "title": "6", 
+            "id": "6", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "cluster": "3", 
+            "title": "17", 
+            "id": "17", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "cluster": "3", 
+            "title": "18", 
+            "id": "18", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "root": true, 
+            "type": "4", 
+            "id": "4", 
+            "title": "4"
+        }, 
+        {
+            "cluster": "4", 
+            "title": "11", 
+            "id": "11", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "cluster": "4", 
+            "title": "19", 
+            "id": "19", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "root": true, 
+            "type": "5", 
+            "id": "5", 
+            "title": "5"
+        }, 
+        {
+            "cluster": "5", 
+            "title": "9", 
+            "id": "9", 
+            "relatedness": "0.5"
+        }, 
+        {
+            "cluster": "5", 
+            "title": "20", 
+            "id": "20", 
+            "relatedness": "0.5"
+        }
+    ], 
+    "edges": [
+        {
+            "source": "6", 
+            "target": "17", 
+            "relatedness": "10"
+        }, 
+        {
+            "source": "6", 
+            "target": "18", 
+            "relatedness": "10"
+        }, 
+        {
+            "source": "13", 
+            "target": "12", 
+            "relatedness": "12"
+        }, 
+        {
+            "source": "8", 
+            "target": "13", 
+            "relatedness": "13"
+        }, 
+        {
+            "source": "7", 
+            "target": "15", 
+            "relatedness": "11"
+        }, 
+        {
+            "source": "7", 
+            "target": "21", 
+            "relatedness": "11"
+        }, 
+        {
+            "source": "9", 
+            "target": "20", 
+            "relatedness": "14"
+        }, 
+        {
+            "source": "7", 
+            "target": "14", 
+            "relatedness": "11"
+        }, 
+        {
+            "source": "10", 
+            "target": "16", 
+            "relatedness": "15"
+        }, 
+        {
+            "source": "11", 
+            "target": "19", 
+            "relatedness": "17"
+        }
+    ]
+}
