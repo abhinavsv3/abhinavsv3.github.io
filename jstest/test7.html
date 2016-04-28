@@ -13,17 +13,20 @@
         clusterColours: ["#DD79FF", "#00FF30", "#5168FF", "#f83f00", "#ff8d8f"],
         forceLocked: false,
         nodeCaption: "title", 
-        nodeMouseOver: 'id'
+        nodeMouseOver: 'title',
+        directedEdges: true,
         edgeCaption: "relatedness",
-        nodeCaptionsOnByDefault: true,
+        nodeCaptionsOnByDefault: false,
+         nodesToggle: true,
         nodeTypes: {"type":["philosopher"]},
         directedEdges:true,
         nodeStyle: {
-            "philosopher": {
-                "radius": 18
+            "all": {
+                "radius": function(d){ return 10 + d.getProperties().id * 10}
             }
+
         }, 
-        initialScale: 0.7, 
+        initialScale: 1, 
         initialTranslate: [250,150]
       }
 
