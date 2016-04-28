@@ -1,4 +1,5 @@
 markdown: kramdown
+highlighter: rouge
 pygments: true
 permalink: /posts/:title
 auto: true
