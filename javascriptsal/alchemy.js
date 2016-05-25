@@ -1839,7 +1839,7 @@
               return "" + (clustering.getClusterColour(index));
             } else if (source[clusterKey] !== target[clusterKey]) {
               id = "" + source[clusterKey] + "-" + target[clusterKey];
-              gid = "cluster-gradient-" + id,"#FFFFFF";
+              gid = "cluster-gradient-" + id,"-#FFFFFF";
               return "url(#" + gid + ")";
             }
           })(d);
