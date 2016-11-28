@@ -1,0 +1,281 @@
+{
+ "name": "Edge",
+ "children": [
+  {
+   "name": "BBB1",
+   "children": [
+    {
+     "name": "Sensor1",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor2",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor3",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor4",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor5",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor6",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    
+    {
+     "name": "Sensor7",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    }
+    ]
+   },
+   {
+   "name": "BBB1",
+   "children": [
+    {
+     "name": "Sensor1",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor2",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor3",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor4",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor5",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor6",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    
+    {
+     "name": "Sensor7",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    }
+    ]
+   },
+   {
+   "name": "BBB1",
+   "children": [
+    {
+     "name": "Sensor1",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor2",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor3",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor4",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor5",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor6",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    
+    {
+     "name": "Sensor7",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    }
+    ]
+   },
+   {
+   "name": "BBB1",
+   "children": [
+    {
+     "name": "Sensor1",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor2",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor3",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor4",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor5",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    {
+     "name": "Sensor6",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    },
+    
+    {
+     "name": "Sensor7",
+     "children": [
+      {"name": "Function1", "size": 3938},
+      {"name": "Uses", "size": 3812},
+      {"name": "Cost", "size": 6714},
+      {"name": "Something", "size": 743}
+     ]
+    }
+    ]
+   }
+  ]
+}

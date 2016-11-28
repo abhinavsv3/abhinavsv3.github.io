@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOS Project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+  }
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      text-rendering: optimizeLegibility;
+      text-shadow: 2px 2px #eeeeef;
+      text-align: center;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h3 {
+      font-size: 24px;
+      text-transform: capitalize ;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  } 
+  .jumbotron {
+      background-color: #b29000;
+      color: #fff;
+      padding: 5px 25px;
+      font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+      padding: 30px 30px;
+      background-color: #FFFFFA;
+  }
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+  .bg-blue {
+      background-color: #f6f6ff;
+  }
+  .bg-white{
+      background-color: #ffffff; 
+  }
+  .logo-small {
+      color: #f4511e;
+      font-size: 50px;
+  }
+  .logo {
+      color: #f4511e;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #f4511e;
+  }
+  .carousel-indicators li {
+      border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+      background-color: #f4511e;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  .panel {
+      border: 1px solid #f4511e; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #f4511e;
+      background-color: #fff !important;
+      color: #f4511e;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #f4511e !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+      background-color: white !important;
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #f4511e;
+      color: #fff;
+  }
+  .navbar {
+      margin-bottom: 0;
+      background-color: #b290F0;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #f4511e !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: steelblue;
+      color: #fff !important;
+  }
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #blue;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;	
+      animation-duration: 1s;	
+      -webkit-animation-duration: 1s;
+      visibility: visible;			
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }	
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">DOS Project - Dash Board</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid bg-blue">
+<br>
+<h2>Dash Board</h2>
+  <h4>Click on the respecive buttons to view the respective graphs. <br>Dash Board</h4> 
+  <hr>
+  <!--- <button class="btn btn-default btn-lg">Get in Touch</button> -->
+</div>
+<!--
+<div  id = "tryit" class="container-fluid bg-grey"  >
+    <form class = "form-inline" method = "POST" enctype="multipart/form-data">
+    <h2>Greetings:</h2> <input type="text" placeholder="Vankam!" name="greet"><br/>
+    <h2>Message:</h2> <input type="text" placeholder="Vazhga Valamudan!" name="name"><br/>
+     <h4>Choose the File :</h4><input type = "file" class = "form-control" name="myfile">
+      <h4>Is the input a Weighted Graph? :</h4>
+      <input type="radio" name="weighted" value="Yep"> Yep<br>
+        <input type="radio" name="weighted" value="No"> No<br>
+    <input type = "submit" class = "form-control">
+ </form>
+</div>
+-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2">
+      <span class="glyphicon glyphicon-blackboard logo"></span>
+    </div>
+    <div class="col-sm-4">
+      <h3>Tree</h3>
+      <form class = "form-inline" action="tree2.html" method = "get" enctype="multipart/form-data">
+        <input class="btn btn-default btn-lg" type = "submit" class = "form-control" value="Click here">
+
+      </form>
+      <h4><strong>Tree:</strong> Displays the Upper most layer of the graph. Each node is a community and the edges are the links between the two communities. </h4> 
+      <p><strong>VISION:</strong> Highest level to see the graphs and thier interlinks</p>
+    </div>
+    <div class="col-sm-6">
+      <h3>Toggle</h3>
+      <form class = "form-inline" action="toggle.html" method = "get" enctype="multipart/form-data">
+        <input class="btn btn-default btn-lg" type = "submit" class = "form-control" value="Click here">
+
+      </form>
+      <h4><strong>Desc:</strong> All nodes are displayed in the graph seperated by communities.</h4> 
+      <p><strong>VISION:</strong> To View the lowermost layer demonstrated by the algorithm</p>
+    </div>
+    <!--
+   <div class="col-sm-8">
+      <span class="glyphicon glyphicon-fire logo"></span>
+    </div>
+	 <div class="col-sm-8">
+      <h3>All nodes</h3>
+      <form class = "form-inline" action="/anode" method = "get" enctype="multipart/form-data">
+        <input class="btn btn-default btn-lg" type = "submit" class = "form-control" value="Click here">
+
+      </form>
+      <h4><strong>Desc:</strong> All nodes are displayed in the graph seperated by communities.</h4> 
+      <p><strong>VISION:</strong> To View the lowermost layer demonstrated by the algorithm</p> -->
+    </div> 
+    <hr>
+    <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2">
+      <span class="glyphicon glyphicon-send logo"></span>
+    </div>
+    <div class="col-sm-4">
+      <h3>Tree</h3>
+      <form class = "form-inline" action="liveD3.html" method = "get" enctype="multipart/form-data">
+        <input class="btn btn-default btn-lg" type = "submit" class = "form-control" value="Click here">
+
+      </form>
+      <h4><strong>Live</strong> Somethings</h4> 
+      <p><strong>VISION:</strong> Something</p>
+    </div>
+    <div class="col-sm-6">
+      <h3>LiveMultiple</h3>
+      <form class = "form-inline" action="lively.html"	 enctype="multipart/form-data">
+        <input class="btn btn-default btn-lg" type = "submit" class = "form-control" value="Click here">
+
+      </form>
+      <h4><strong>Desc:</strong> All nodes are displayed in the graph seperated by communities.</h4> 
+      <p><strong>VISION:</strong> To View the lowermost layer demonstrated by the algorithm</p>
+    </div>
+
+    <div class="col-sm-8">
+      <h3>LiveMultiple</h3>
+      <form class = "form-inline" action="tree3.html"	 enctype="multipart/form-data">
+        <input class="btn btn-default btn-lg" type = "submit" class = "form-control" value="Click here">
+      </form>
+      <h4><strong>Desc:</strong> All nodes are displayed in the graph seperated by communities.</h4> 
+      <p><strong>VISION:</strong> To View the lowermost layer demonstrated by the algorithm</p>
+    </div>
+    <!--
+   <div class="col-sm-8">
+      <span class="glyphicon glyphicon-fire logo"></span>
+    </div>
+	 <div class="col-sm-8">
+      <h3>All nodes</h3>
+      <form class = "form-inline" action="/anode" method = "get" enctype="multipart/form-data">
+        <input class="btn btn-default btn-lg" type = "submit" class = "form-control" value="Click here">
+
+      </form>
+      <h4><strong>Desc:</strong> All nodes are displayed in the graph seperated by communities.</h4> 
+      <p><strong>VISION:</strong> To View the lowermost layer demonstrated by the algorithm</p> -->
+    </div> 
+<!--
+    <div class="col-sm-6">
+      <h2>Our Values</h2>
+      <h4><strong>MISSION:</strong> Our misssafion lorem ipsum..</h4> 
+      <p><strong>VISION:</strong> Our vision Lorem ipsum..</p>
+    </div>
+    <div class="col-sm-8">
+      <h2>Our Values</h2>
+      <h4><strong>MISSION:</strong> Our misssafion lorem ipsum..</h4> 
+      <p><strong>VISION:</strong> Our vision Loreasd ipsum..</p>
+    </div>
+    -->
+  </div>
+</div>
+
+
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+
+
+function initialize() {
+var mapProp = {
+  center:myCenter,
+  zoom:12,
+  scrollwheel:false,
+  draggable:false,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+  position:myCenter,
+  });
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+</footer>
+
+<script>
+</script>
+
+</body>
+</html>
+

@@ -88,7 +88,7 @@ function update(source) {
       .on("click", click);
 
   nodeEnter.append("circle")
-      .attr("r", 1e-6)
+      .attr("r", 10)
       .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
 
   nodeEnter.append("text")
@@ -104,7 +104,7 @@ function update(source) {
       .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
 
   nodeUpdate.select("circle")
-      .attr("r", 4.5)
+      .attr("r", 5)
       .style("fill", function(d) { return d._children ? "red" : "#fff"; });
 
   nodeUpdate.select("text")
@@ -165,6 +165,8 @@ function click(d) {
     d._children = null;
   }
   update(d);
+  var url = "http://google.com/";
+  window.open(url);
 }
 
 </script>
