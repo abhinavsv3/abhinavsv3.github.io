@@ -48,19 +48,13 @@
 			// not passing anything in for pym will default to 1.
 		
 		sP.swtch.renderSwtch(svg, switchElement);	
-		var i=0;
+		
 		var switchListener = svg.select("#" + demoSwitch.id)
 			.on("click", function() {
-				sP.swtch.toggleSwitch(svg,demoSwitch) 
-				if(i == 0){
-				var url = "https://www.google.com/";
-				window.location.href = url; i=1;
-			  }
-			  else
-			  {
-			  		var url = "https://www.yahoo.com/";
-				    window.location.href = url; i=0;
-			  }
+				sP.swtch.toggleSwitch(svg,demoSwitch) // again not passing any pym info in will default to 1.		
+				// Other response elements go here. 
+//The swtch.toggleSwitch call takes care of the state of the switch, but the link between the state of the switch and the rest of the illustration 
+				// needs to be tracked separately. 
 			});
 	</script>
   
