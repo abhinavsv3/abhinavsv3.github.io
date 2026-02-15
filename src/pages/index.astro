@@ -1,83 +1,88 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-// Get all blog posts
-const posts = await Astro.glob('./blog/*.{md,mdx}');
-const sortedPosts = posts
-  .sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf())
-  .slice(0, 5);
-
-const formatDate = (date: string) => {
-  return new Date(date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
-};
 ---
 
-<BaseLayout title="Scaling Thoughts">
+<BaseLayout title="Abhinav | Scaling Thoughts" description="ML Engineer at Amazon Special Projects - Foundation Models & Inference">
   <div class="max-w-3xl mx-auto px-6 py-12">
-    <!-- Hero Section -->
-    <section class="mb-16">
-      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6 leading-tight">
-        Hi, I'm Abhinav
-      </h1>
-      <p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-        Building scalable ML systems at Amazon. I write about
-        model inference, foundation models, and making AI practical.
-      </p>
-      <div class="flex gap-4">
-        <a href="/about" class="link font-medium">More about me &rarr;</a>
-      </div>
-    </section>
-
-    <!-- Recent Posts -->
-    <section>
-      <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-8">
-        Recent Writing
-      </h2>
-
-      {sortedPosts.length > 0 ? (
-        <ul class="space-y-8">
-          {sortedPosts.map((post) => (
-            <li>
-              <a href={post.url} class="group block">
-                <article class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
-                  <time
-                    datetime={post.frontmatter.pubDate}
-                    class="text-sm text-gray-500 dark:text-gray-400 shrink-0 w-28"
-                  >
-                    {formatDate(post.frontmatter.pubDate)}
-                  </time>
-                  <div>
-                    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 group-hover:text-accent dark:group-hover:text-accent-dark transition-colors">
-                      {post.frontmatter.title}
-                    </h3>
-                    {post.frontmatter.description && (
-                      <p class="text-gray-600 dark:text-gray-400 mt-1">
-                        {post.frontmatter.description}
-                      </p>
-                    )}
-                  </div>
-                </article>
-              </a>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p class="text-gray-500 dark:text-gray-400">
-          No posts yet. Check back soon!
-        </p>
-      )}
-
-      {sortedPosts.length > 0 && (
-        <div class="mt-10">
-          <a href="/writing" class="link font-medium">
-            View all posts &rarr;
-          </a>
+    <div class="prose prose-lg max-w-none">
+      <!-- Profile section -->
+      <div class="not-prose flex flex-col sm:flex-row gap-6 items-start mb-8">
+        <img
+          src="/profile.jpg"
+          alt="Abhinav"
+          class="w-32 h-32 rounded-full object-cover"
+        />
+        <div>
+          <h1 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Abhinav</h1>
+          <p class="text-gray-600 dark:text-gray-400">
+            Machine Learning Engineer — Foundation Models<br />
+            <strong>Amazon Special Projects (Grand Challenge)</strong>
+          </p>
+          <div class="flex gap-4 mt-3">
+            <a href="https://github.com/abhinavsv3" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent dark:hover:text-accent-dark">GitHub</a>
+            <a href="https://linkedin.com/in/abhinavsv3" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent dark:hover:text-accent-dark">LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=i_dHJ6cAAAAJ" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent dark:hover:text-accent-dark">Scholar</a>
+          </div>
         </div>
-      )}
-    </section>
+      </div>
+
+      <p>
+        I build and optimize large-scale inference systems for foundation models within
+        <strong>Amazon's Special Projects incubator (Grand Challenge)</strong>. My work focuses on
+        the intersection of <strong>Generative AI and Biology</strong>, specifically engineering
+        systems that handle the computational complexity of multi-billion parameter models in
+        production environments.
+      </p>
+
+      <p>
+        My recent research focuses on <strong>cross-model translation and prompt optimization</strong>—developing
+        methods to reduce inference latency and operational costs while maintaining model reliability.
+        I presented this work at the <strong>Amazon Machine Learning Conference (2025)</strong>.
+      </p>
+
+      <h2>Research Background</h2>
+      <p>
+        My approach to scalable systems is rooted in a background of algorithmic research across
+        several international institutions:
+      </p>
+
+      <ul>
+        <li>
+          <strong>University of Florida:</strong> Focused on graph and matrix algorithms for
+          high-dimensional data, developing methods for efficient data visualization and
+          structural extraction.
+        </li>
+        <li>
+          <strong>Universitat Politècnica de Catalunya (UPC), Barcelona:</strong> Research at
+          LARCA on relational algorithms and computational learning theory with
+          <strong>Prof. Ricard Gavaldà</strong>.
+        </li>
+        <li>
+          <strong>Tokyo City University:</strong> Exchange research under
+          <strong>Prof. Takamichi Hirata</strong> exploring algorithmic efficiency within
+          hardware-level constraints.
+        </li>
+        <li>
+          <strong>Institute of Mathematical Sciences (IMSc, Chennai):</strong> Early research
+          exposure to computational modeling and formal mathematical methods.
+        </li>
+      </ul>
+
+      <p>
+        I completed my undergraduate studies at <strong>SASTRA University</strong>, India.
+      </p>
+
+      <h2>Scaling Thoughts</h2>
+      <p>
+        This blog documents the engineering decisions behind production machine learning—from
+        low-level inference kernels to the architectural patterns of foundation models.
+      </p>
+
+      <hr class="my-8 border-gray-200 dark:border-gray-800" />
+
+      <p class="text-sm text-gray-500 dark:text-gray-400 italic">
+        Opinions expressed here are my own and do not represent my employer.
+      </p>
+    </div>
   </div>
 </BaseLayout>
