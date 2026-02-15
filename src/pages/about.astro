@@ -11,55 +11,54 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </header>
 
     <div class="prose prose-lg max-w-none">
+      <!-- Profile section -->
+      <div class="not-prose flex flex-col sm:flex-row gap-6 items-start mb-8">
+        <img
+          src="/profile.jpg"
+          alt="Abhinav"
+          class="w-32 h-32 rounded-full object-cover"
+        />
+        <div>
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Abhinav</h2>
+          <p class="text-gray-600 dark:text-gray-400">
+            Software Engineer at Amazon<br />
+            Seattle, WA
+          </p>
+          <div class="flex gap-4 mt-3">
+            <a href="https://github.com/abhinavsv3" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent dark:hover:text-accent-dark">GitHub</a>
+            <a href="https://linkedin.com/in/abhinavsv3" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent dark:hover:text-accent-dark">LinkedIn</a>
+            <a href="https://twitter.com/abhinavsv3" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent dark:hover:text-accent-dark">Twitter</a>
+          </div>
+        </div>
+      </div>
+
       <p>
-        Hi, I'm <strong>Abhinav</strong>. I'm a Software Engineer at <strong>Amazon</strong>,
-        currently working in the Special Projects group focused on Biology.
+        Hi, I'm Abhinav.
       </p>
 
       <p>
-        I work on problems at the intersection of machine learning, distributed systems,
-        and high-dimensional data. My recent work includes research on
-        <a href="#">prompt optimization and translation across foundation models</a>,
-        published at the Amazon Machine Learning Conference (2025).
+        I'm a Software Engineer at <strong>Amazon</strong>, currently working on ML infrastructure
+        for computational biology in the Special Projects group.
+      </p>
+
+      <p>
+        I like building things from scratch—taking ambiguous problems and shipping real solutions.
+        My recent work includes prompt optimization across foundation models, published at the
+        Amazon Machine Learning Conference (2025).
       </p>
 
       <h2>Background</h2>
       <p>
-        I hold a Master's degree from the <strong>University of Florida</strong>, where I was
-        an Academic Achievement Award Scholar. My thesis focused on graph and matrix algorithms
-        for visualizing high-dimensional data.
+        I did my Master's at the <strong>University of Florida</strong>, focusing on graph and matrix
+        algorithms for visualizing high-dimensional data. Before that, I studied at
+        <strong>SASTRA University</strong> in India.
       </p>
-
-      <p>
-        Before that, I completed my undergraduate studies at <strong>SASTRA University</strong> in India,
-        where I was a Dean's Merit Scholar and led the Computer Science cluster at the
-        Daksh Techno-Management Festival.
-      </p>
-
-      <h2>Interests</h2>
-      <p>
-        I'm particularly interested in:
-      </p>
-      <ul>
-        <li>Machine learning and foundation models</li>
-        <li>Graph algorithms and data visualization</li>
-        <li>Distributed systems</li>
-        <li>Computational biology</li>
-      </ul>
 
       <h2>This Blog</h2>
       <p>
-        Scaling Thoughts is where I write about technical ideas, engineering challenges,
-        and things I'm learning. I believe in learning in public—writing helps clarify
-        thinking and hopefully helps others along the way.
+        Scaling Thoughts is where I think out loud about engineering, ML, and whatever I'm learning.
+        Writing helps clarify thinking—and hopefully helps others along the way.
       </p>
-
-      <h2>Connect</h2>
-      <ul>
-        <li><a href="https://github.com/abhinavsv3" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://linkedin.com/in/abhinavsv3" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="https://twitter.com/abhinavsv3" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-      </ul>
     </div>
   </div>
 </BaseLayout>
