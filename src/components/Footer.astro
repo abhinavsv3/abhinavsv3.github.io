@@ -1,0 +1,32 @@
+---
+const socialLinks = [
+  { href: 'https://github.com/abhinavsv3', label: 'GitHub' },
+  { href: 'https://twitter.com/abhinavsv3', label: 'Twitter' },
+  { href: 'https://linkedin.com/in/abhinavsv3', label: 'LinkedIn' },
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-gray-200 dark:border-gray-800 mt-16">
+  <div class="max-w-3xl mx-auto px-6 py-8">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        &copy; {currentYear} Scaling Thoughts. All rights reserved.
+      </p>
+
+      <div class="flex items-center gap-4">
+        {socialLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent-dark transition-colors"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</footer>

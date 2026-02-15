@@ -1,0 +1,42 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/writing', label: 'Writing' },
+  { href: '/about', label: 'About' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+  <nav class="max-w-3xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <a href="/" class="text-xl font-semibold hover:text-accent dark:hover:text-accent-dark transition-colors">
+        Scaling Thoughts
+      </a>
+
+      <div class="flex items-center gap-6">
+        <ul class="flex items-center gap-6">
+          {navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={[
+                  'text-sm font-medium transition-colors',
+                  currentPath === item.href
+                    ? 'text-accent dark:text-accent-dark'
+                    : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100',
+                ]}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <ThemeToggle />
+      </div>
+    </div>
+  </nav>
+</header>
