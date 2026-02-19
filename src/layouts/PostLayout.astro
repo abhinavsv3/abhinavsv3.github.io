@@ -30,18 +30,7 @@ const tocHeadings = headings.filter(h => h.depth === 2);
 
 <BaseLayout title={`${frontmatter.title} | Scaling Thoughts`} description={frontmatter.description}>
   <article>
-    <!-- Hero Image -->
-    {frontmatter.heroImage && (
-      <div class="w-full max-w-5xl mx-auto px-6 pt-8">
-        <img
-          src={frontmatter.heroImage}
-          alt={frontmatter.title}
-          class="w-full h-auto rounded-2xl object-cover aspect-[2/1]"
-        />
-      </div>
-    )}
-
-    <div class="max-w-6xl mx-auto px-6 py-12 sm:py-16">
+    <div class="max-w-6xl mx-auto px-6 py-16 sm:py-20">
       <div class="lg:grid lg:grid-cols-[200px_1fr] lg:gap-12">
         <!-- TOC Sidebar (desktop only) -->
         {tocHeadings.length > 0 && (

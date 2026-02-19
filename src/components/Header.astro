@@ -13,8 +13,14 @@ const currentPath = Astro.url.pathname;
 <header class="sticky top-0 z-50 bg-bg-light/80 dark:bg-bg-dark/80 backdrop-blur-md border-b border-border-light dark:border-border-dark">
   <nav class="max-w-5xl mx-auto px-6 py-5">
     <div class="flex items-center justify-between">
-      <a href="/" class="text-xl font-bold tracking-tight text-ink dark:text-ink-dark hover:text-accent dark:hover:text-accent-dark transition-colors">
-        Scaling Thoughts
+      <a href="/" class="flex items-center gap-2 text-xl tracking-tight hover:opacity-70 transition-opacity">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-ink dark:text-ink-dark">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2.5" fill="none" opacity="0.3"/>
+          <circle cx="14" cy="16" r="9" stroke="currentColor" stroke-width="2.5" fill="none" opacity="0.5"/>
+          <circle cx="12" cy="16" r="4.5" stroke="currentColor" stroke-width="2.5" fill="none" opacity="0.75"/>
+          <circle cx="10" cy="16" r="1.5" fill="currentColor"/>
+        </svg>
+        <span><span class="font-normal text-ink-muted dark:text-ink-dark-muted">Scaling</span> <span class="font-bold text-ink dark:text-ink-dark">Thoughts</span></span>
       </a>
 
       <div class="flex items-center gap-8">

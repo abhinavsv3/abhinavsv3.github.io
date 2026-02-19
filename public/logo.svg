@@ -1,0 +1,11 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- DeepMind-inspired spiral/vortex - representing deep, scaling thoughts -->
+  <!-- Outer ring -->
+  <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2.5" fill="none" opacity="0.3"/>
+  <!-- Middle ring -->
+  <circle cx="14" cy="16" r="9" stroke="currentColor" stroke-width="2.5" fill="none" opacity="0.5"/>
+  <!-- Inner ring -->
+  <circle cx="12" cy="16" r="4.5" stroke="currentColor" stroke-width="2.5" fill="none" opacity="0.75"/>
+  <!-- Core -->
+  <circle cx="10" cy="16" r="1.5" fill="currentColor"/>
+</svg>

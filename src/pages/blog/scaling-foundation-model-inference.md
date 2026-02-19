@@ -4,7 +4,6 @@ title: 'Scaling Foundation Model Inference: Lessons from Production'
 description: 'What I learned building inference systems for multi-billion parameter models at scale.'
 pubDate: '2024-02-14'
 tags: ['machine learning', 'infrastructure']
-heroImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=600&fit=crop'
 ---
 
 When you're serving foundation models to millions of users, every millisecond matters. Over the past year, I've been building inference infrastructure for multi-billion parameter models, and the challenges have been both humbling and fascinating.
