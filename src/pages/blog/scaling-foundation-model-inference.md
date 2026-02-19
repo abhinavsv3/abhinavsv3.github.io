@@ -2,7 +2,7 @@
 layout: '../../layouts/PostLayout.astro'
 title: 'Scaling Foundation Model Inference: Lessons from Production'
 description: 'What I learned building inference systems for multi-billion parameter models at scale.'
-pubDate: '2024-02-14'
+pubDate: '2025-11-14'
 tags: ['machine learning', 'infrastructure']
 ---
 

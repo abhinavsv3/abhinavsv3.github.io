@@ -12,9 +12,15 @@ interface Props {
     author?: string;
   };
   headings?: { depth: number; slug: string; text: string }[];
+  rawContent?: () => string;
 }
 
-const { frontmatter, headings = [] } = Astro.props;
+const { frontmatter, headings = [], rawContent } = Astro.props;
+
+// Calculate reading time (average 200 words per minute)
+const content = rawContent ? rawContent() : '';
+const wordCount = content.split(/\s+/).filter(word => word.length > 0).length;
+const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 
 const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString('en-US', {
   year: 'numeric',
@@ -84,9 +90,11 @@ const tocHeadings = headings.filter(h => h.depth === 2);
                 />
                 <div class="text-sm">
                   <p class="font-medium text-ink dark:text-ink-dark">{author}</p>
-                  <time datetime={frontmatter.pubDate} class="text-ink-muted dark:text-ink-dark-muted">
-                    {formattedDate}
-                  </time>
+                  <p class="text-ink-muted dark:text-ink-dark-muted">
+                    <time datetime={frontmatter.pubDate}>{formattedDate}</time>
+                    <span class="mx-1">·</span>
+                    <span>{readingTime} min read</span>
+                  </p>
                 </div>
               </div>
 
