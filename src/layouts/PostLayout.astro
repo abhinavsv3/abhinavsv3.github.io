@@ -8,40 +8,193 @@ interface Props {
     pubDate: string;
     updatedDate?: string;
     tags?: string[];
+    heroImage?: string;
+    author?: string;
   };
+  headings?: { depth: number; slug: string; text: string }[];
 }
 
-const { frontmatter } = Astro.props;
+const { frontmatter, headings = [] } = Astro.props;
 
 const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 });
+
+const author = frontmatter.author || 'Abhinav';
+
+// Filter to only h2 headings for the TOC
+const tocHeadings = headings.filter(h => h.depth === 2);
 ---
 
 <BaseLayout title={`${frontmatter.title} | Scaling Thoughts`} description={frontmatter.description}>
-  <article class="max-w-3xl mx-auto px-6 py-12">
-    <header class="mb-8">
-      <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4 leading-tight">
-        {frontmatter.title}
-      </h1>
-      <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-        <time datetime={frontmatter.pubDate}>{formattedDate}</time>
-        {frontmatter.tags && (
-          <div class="flex gap-2">
-            {frontmatter.tags.map((tag) => (
-              <span class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded text-xs">
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
+  <article>
+    <!-- Hero Image -->
+    {frontmatter.heroImage && (
+      <div class="w-full max-w-5xl mx-auto px-6 pt-8">
+        <img
+          src={frontmatter.heroImage}
+          alt={frontmatter.title}
+          class="w-full h-auto rounded-2xl object-cover aspect-[2/1]"
+        />
       </div>
-    </header>
+    )}
 
-    <div class="prose prose-lg max-w-none">
-      <slot />
+    <div class="max-w-6xl mx-auto px-6 py-12 sm:py-16">
+      <div class="lg:grid lg:grid-cols-[200px_1fr] lg:gap-12">
+        <!-- TOC Sidebar (desktop only) -->
+        {tocHeadings.length > 0 && (
+          <aside class="hidden lg:block">
+            <div class="sticky top-24">
+              <p class="text-xs font-semibold uppercase tracking-widest text-ink-muted dark:text-ink-dark-muted mb-4">
+                In this story
+              </p>
+              <nav id="toc" class="space-y-2">
+                {tocHeadings.map((heading) => (
+                  <a
+                    href={`#${heading.slug}`}
+                    class="toc-link block text-sm text-ink-muted dark:text-ink-dark-muted hover:text-ink dark:hover:text-ink-dark transition-colors py-1 border-l-2 border-transparent pl-3 -ml-3"
+                    data-slug={heading.slug}
+                  >
+                    {heading.text}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          </aside>
+        )}
+
+        <!-- Main Content -->
+        <div class="max-w-3xl">
+          <!-- Header -->
+          <header class="mb-10">
+            <!-- Tags -->
+            {frontmatter.tags && frontmatter.tags.length > 0 && (
+              <div class="flex flex-wrap gap-2 mb-4">
+                {frontmatter.tags.map((tag) => (
+                  <span class="text-xs font-medium uppercase tracking-wider text-accent dark:text-accent-dark">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            <!-- Title -->
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-ink dark:text-ink-dark mb-6 leading-[1.1]">
+              {frontmatter.title}
+            </h1>
+
+            <!-- Author & Date & Share -->
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <img
+                  src="/profile.jpg"
+                  alt={author}
+                  class="w-10 h-10 rounded-full object-cover"
+                />
+                <div class="text-sm">
+                  <p class="font-medium text-ink dark:text-ink-dark">{author}</p>
+                  <time datetime={frontmatter.pubDate} class="text-ink-muted dark:text-ink-dark-muted">
+                    {formattedDate}
+                  </time>
+                </div>
+              </div>
+
+              <!-- Share Links -->
+              <div class="flex items-center gap-3">
+                <a
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(frontmatter.title)}&url=${encodeURIComponent(`https://abhinavsv3.github.io${Astro.url.pathname}`)}&via=abhinavsv3`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-2 text-ink-muted dark:text-ink-dark-muted hover:text-ink dark:hover:text-ink-dark transition-colors"
+                  title="Share on X"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+                <a
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://abhinavsv3.github.io${Astro.url.pathname}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-2 text-ink-muted dark:text-ink-dark-muted hover:text-ink dark:hover:text-ink-dark transition-colors"
+                  title="Share on LinkedIn"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+                <a
+                  href={`mailto:?subject=${encodeURIComponent(frontmatter.title)}&body=${encodeURIComponent(`https://abhinavsv3.github.io${Astro.url.pathname}`)}`}
+                  class="p-2 text-ink-muted dark:text-ink-dark-muted hover:text-ink dark:hover:text-ink-dark transition-colors"
+                  title="Share via email"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </header>
+
+          <!-- Content -->
+          <div class="prose prose-lg max-w-none" id="article-content">
+            <slot />
+          </div>
+
+          <!-- Back Navigation -->
+          <nav class="mt-16 pt-8 border-t border-border-light dark:border-border-dark">
+            <a
+              href="/writing"
+              class="inline-flex items-center gap-2 text-sm text-ink-muted dark:text-ink-dark-muted hover:text-accent dark:hover:text-accent-dark transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6"/>
+              </svg>
+              Back to Writing
+            </a>
+          </nav>
+        </div>
+      </div>
     </div>
   </article>
 </BaseLayout>
+
+<style>
+  .toc-link.active {
+    @apply text-accent dark:text-accent-dark border-l-accent dark:border-l-accent-dark;
+  }
+</style>
+
+<script>
+  // Scroll spy for TOC
+  const tocLinks = document.querySelectorAll('.toc-link');
+  const headings = document.querySelectorAll('#article-content h2');
+
+  if (tocLinks.length > 0 && headings.length > 0) {
+    const observerOptions = {
+      rootMargin: '-80px 0px -80% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Remove active from all links
+          tocLinks.forEach(link => link.classList.remove('active'));
+          // Add active to matching link
+          const activeLink = document.querySelector(`.toc-link[data-slug="${entry.target.id}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+        }
+      });
+    }, observerOptions);
+
+    headings.forEach((heading) => {
+      observer.observe(heading);
+    });
+  }
+</script>

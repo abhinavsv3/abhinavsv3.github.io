@@ -5,13 +5,36 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['DM Sans', 'system-ui', 'sans-serif'],
       },
       colors: {
         accent: {
-          DEFAULT: '#6366f1',
-          dark: '#818cf8',
+          DEFAULT: '#1a73e8', // Google blue
+          dark: '#8ab4f8',    // lighter blue for dark mode
         },
+        surface: {
+          light: '#f8f9fa',
+          dark: '#1a1a1a',
+        },
+        bg: {
+          light: '#ffffff',
+          dark: '#0d0d0d',
+        },
+        border: {
+          light: '#e8eaed',
+          dark: '#303030',
+        },
+        ink: {
+          DEFAULT: '#202124',
+          muted: '#5f6368',
+        },
+        'ink-dark': {
+          DEFAULT: '#e8eaed',
+          muted: '#9aa0a6',
+        },
+      },
+      fontSize: {
+        'hero': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
       },
       typography: {
         DEFAULT: {

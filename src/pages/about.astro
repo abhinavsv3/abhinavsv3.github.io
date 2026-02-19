@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About | Scaling Thoughts" description="ML Engineer at Amazon Special Projects - Foundation Models & Inference">
+  <div class="max-w-3xl mx-auto px-6 py-16 sm:py-24">
+    <!-- Header -->
+    <header class="mb-12">
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-ink dark:text-ink-dark mb-4">
+        About
+      </h1>
+    </header>
+
+    <!-- Profile -->
+    <section class="flex flex-col sm:flex-row gap-6 items-start mb-12">
+      <img
+        src="/profile.jpg"
+        alt="Abhinav"
+        class="w-28 h-28 rounded-full object-cover"
+      />
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight text-ink dark:text-ink-dark mb-1">
+          Abhinav
+        </h2>
+        <p class="text-lg text-ink-muted dark:text-ink-dark-muted mb-4">
+          Machine Learning Engineer — Foundation Models<br />
+          <span class="text-accent dark:text-accent-dark font-medium">Amazon Special Projects (Grand Challenge)</span>
+        </p>
+        <div class="flex gap-4 text-sm">
+          <a href="https://github.com/abhinavsv3" target="_blank" rel="noopener noreferrer" class="link-subtle">GitHub</a>
+          <a href="https://linkedin.com/in/abhinavsv3" target="_blank" rel="noopener noreferrer" class="link-subtle">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=i_dHJ6cAAAAJ" target="_blank" rel="noopener noreferrer" class="link-subtle">Scholar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bio -->
+    <section class="mb-12">
+      <div class="prose max-w-none">
+        <p>
+          I build and optimize large-scale inference systems for foundation models within
+          <strong class="text-ink dark:text-ink-dark">Amazon's Special Projects incubator (Grand Challenge)</strong>. My work focuses on
+          the intersection of <strong class="text-ink dark:text-ink-dark">Generative AI and Biology</strong>, specifically engineering
+          systems that handle the computational complexity of multi-billion parameter models in
+          production environments.
+        </p>
+
+        <p>
+          My recent research focuses on <strong class="text-ink dark:text-ink-dark">cross-model translation and prompt optimization</strong>—developing
+          methods to reduce inference latency and operational costs while maintaining model reliability.
+          I presented this work at the <strong class="text-ink dark:text-ink-dark">Amazon Machine Learning Conference (2025)</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Research Background -->
+    <section class="mb-12">
+      <h2 class="text-xl font-bold tracking-tight text-ink dark:text-ink-dark mb-6">Research Background</h2>
+      <div class="prose max-w-none">
+        <p class="text-ink-muted dark:text-ink-dark-muted">
+          My approach to scalable systems is rooted in algorithmic research across international institutions:
+        </p>
+
+        <ul>
+          <li>
+            <strong class="text-ink dark:text-ink-dark">Universitat Politècnica de Catalunya (UPC), Barcelona:</strong> Bachelor's thesis
+            on graph and matrix algorithms for high-dimensional data visualization, supervised by
+            Prof. Ricard Gavaldà and Prof. Marta Arias Vicente.
+            <a href="https://hdl.handle.net/2117/88495" target="_blank" rel="noopener noreferrer" class="text-accent dark:text-accent-dark hover:underline">[Thesis]</a>
+          </li>
+          <li>
+            <strong class="text-ink dark:text-ink-dark">University of Florida:</strong> Master's in Computer Science. Research on
+            k-tuple harmonious coloring (NP-complete) with Prof. Alper Ungor.
+            Graduate TA for Analysis of Algorithms.
+          </li>
+          <li>
+            <strong class="text-ink dark:text-ink-dark">Tokyo City University:</strong> Exchange research under
+            Prof. Takamichi Hirata on algorithmic efficiency within hardware constraints.
+          </li>
+          <li>
+            <strong class="text-ink dark:text-ink-dark">Institute of Mathematical Sciences (IMSc), Chennai:</strong> Visiting research
+            student (Top 20 selection, India). Exposure to computational modeling and formal methods.
+          </li>
+          <li>
+            <strong class="text-ink dark:text-ink-dark">IIIT Kancheepuram:</strong> Research intern in graph algorithms.
+          </li>
+          <li>
+            <strong class="text-ink dark:text-ink-dark">SASTRA University, India:</strong> B.Tech in Computer Science and Engineering.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About the Blog -->
+    <section class="mb-12">
+      <h2 class="text-xl font-bold tracking-tight text-ink dark:text-ink-dark mb-4">Scaling Thoughts</h2>
+      <p class="text-ink-muted dark:text-ink-dark-muted">
+        This blog documents the engineering decisions behind production machine learning—from
+        low-level inference kernels to the architectural patterns of foundation models.
+      </p>
+    </section>
+
+    <!-- Disclaimer -->
+    <p class="text-sm text-ink-muted dark:text-ink-dark-muted italic border-t border-border-light dark:border-border-dark pt-8">
+      Opinions expressed here are my own and do not represent my employer.
+    </p>
+  </div>
+</BaseLayout>

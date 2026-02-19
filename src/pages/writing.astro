@@ -6,6 +6,13 @@ const sortedPosts = posts.sort(
   (a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
 );
 
+// Extract slug from file path
+const getSlug = (post: any) => {
+  const path = post.file;
+  const match = path.match(/\/blog\/([^/]+)\.(md|mdx)$/);
+  return match ? `/blog/${match[1]}` : post.url;
+};
+
 const formatDate = (date: string) => {
   return new Date(date).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -26,54 +33,51 @@ const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
 ---
 
 <BaseLayout title="Writing | Scaling Thoughts" description="All blog posts and articles.">
-  <div class="max-w-3xl mx-auto px-6 py-12">
-    <header class="mb-12">
-      <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+  <div class="max-w-5xl mx-auto px-6 py-16 sm:py-24">
+    <!-- Hero Header -->
+    <header class="mb-16">
+      <h1 class="text-4xl sm:text-5xl lg:text-hero font-bold tracking-tight text-ink dark:text-ink-dark mb-4">
         Writing
       </h1>
-      <p class="text-gray-600 dark:text-gray-400">
-        All my blog posts, organized by year.
+      <p class="text-lg text-ink-muted dark:text-ink-dark-muted">
+        Engineering decisions behind production ML systems.
       </p>
     </header>
 
     {years.length > 0 ? (
-      <div class="space-y-12">
+      <div class="space-y-16">
         {years.map((year) => (
           <section>
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
+            <h2 class="text-xs font-semibold uppercase tracking-widest text-ink-muted dark:text-ink-dark-muted mb-6">
               {year}
             </h2>
-            <ul class="space-y-6">
+            <div class="grid sm:grid-cols-2 gap-4">
               {postsByYear[Number(year)].map((post) => (
-                <li>
-                  <a href={post.url} class="group block">
-                    <article class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
-                      <time
-                        datetime={post.frontmatter.pubDate}
-                        class="text-sm text-gray-500 dark:text-gray-400 shrink-0 w-28"
-                      >
-                        {formatDate(post.frontmatter.pubDate)}
-                      </time>
-                      <div>
-                        <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 group-hover:text-accent dark:group-hover:text-accent-dark transition-colors">
-                          {post.frontmatter.title}
-                        </h3>
-                        {post.frontmatter.description && (
-                          <p class="text-gray-600 dark:text-gray-400 mt-1">
-                            {post.frontmatter.description}
-                          </p>
-                        )}
-                      </div>
-                    </article>
-                  </a>
-                </li>
+                <a href={getSlug(post)} class="card group block">
+                  <article>
+                    <time
+                      datetime={post.frontmatter.pubDate}
+                      class="text-xs text-ink-muted dark:text-ink-dark-muted mb-2 block"
+                    >
+                      {formatDate(post.frontmatter.pubDate)}
+                    </time>
+                    <h3 class="font-semibold text-ink dark:text-ink-dark group-hover:text-accent dark:group-hover:text-accent-dark transition-colors mb-2">
+                      {post.frontmatter.title}
+                    </h3>
+                    {post.frontmatter.description && (
+                      <p class="text-sm text-ink-muted dark:text-ink-dark-muted line-clamp-2">
+                        {post.frontmatter.description}
+                      </p>
+                    )}
+                  </article>
+                </a>
               ))}
-            </ul>
+            </div>
           </section>
         ))}
       </div>
     ) : (
-      <p class="text-gray-500 dark:text-gray-400">
+      <p class="text-ink-muted dark:text-ink-dark-muted">
         No posts yet. Check back soon!
       </p>
     )}

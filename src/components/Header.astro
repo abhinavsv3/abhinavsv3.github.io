@@ -2,21 +2,23 @@
 import ThemeToggle from './ThemeToggle.astro';
 
 const navItems = [
+  { href: '/', label: 'Home' },
   { href: '/writing', label: 'Writing' },
+  { href: '/about', label: 'About' },
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
-  <nav class="max-w-3xl mx-auto px-6 py-4">
+<header class="sticky top-0 z-50 bg-bg-light/80 dark:bg-bg-dark/80 backdrop-blur-md border-b border-border-light dark:border-border-dark">
+  <nav class="max-w-5xl mx-auto px-6 py-5">
     <div class="flex items-center justify-between">
-      <a href="/" class="text-xl font-semibold hover:text-accent dark:hover:text-accent-dark transition-colors">
+      <a href="/" class="text-xl font-bold tracking-tight text-ink dark:text-ink-dark hover:text-accent dark:hover:text-accent-dark transition-colors">
         Scaling Thoughts
       </a>
 
-      <div class="flex items-center gap-6">
-        <ul class="flex items-center gap-6">
+      <div class="flex items-center gap-8">
+        <ul class="flex items-center gap-8">
           {navItems.map((item) => (
             <li>
               <a
@@ -25,7 +27,7 @@ const currentPath = Astro.url.pathname;
                   'text-sm font-medium transition-colors',
                   currentPath === item.href
                     ? 'text-accent dark:text-accent-dark'
-                    : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100',
+                    : 'text-ink-muted dark:text-ink-dark-muted hover:text-[#0a0a0a] dark:hover:text-[#fafafa]',
                 ]}
               >
                 {item.label}

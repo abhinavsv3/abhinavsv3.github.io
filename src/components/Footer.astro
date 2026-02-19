@@ -8,20 +8,20 @@ const socialLinks = [
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-t border-gray-200 dark:border-gray-800 mt-16">
-  <div class="max-w-3xl mx-auto px-6 py-8">
+<footer class="border-t border-border-light dark:border-border-dark mt-24">
+  <div class="max-w-5xl mx-auto px-6 py-8">
     <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-gray-500 dark:text-gray-400">
-        &copy; {currentYear} Scaling Thoughts. All rights reserved.
+      <p class="text-sm text-ink-muted dark:text-ink-dark-muted">
+        &copy; {currentYear} Scaling Thoughts
       </p>
 
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-6">
         {socialLinks.map((link) => (
           <a
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            class="text-sm text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent-dark transition-colors"
+            class="text-sm text-ink-muted dark:text-ink-dark-muted hover:text-accent dark:hover:text-accent-dark transition-colors"
           >
             {link.label}
           </a>

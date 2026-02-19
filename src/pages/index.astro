@@ -1,90 +1,110 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const posts = await Astro.glob('./blog/*.{md,mdx}');
+const recentPosts = posts
+  .sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf())
+  .slice(0, 3);
+
+// Extract slug from file path
+const getSlug = (post: any) => {
+  const path = post.file;
+  const match = path.match(/\/blog\/([^/]+)\.(md|mdx)$/);
+  return match ? `/blog/${match[1]}` : post.url;
+};
+
+const formatDate = (date: string) => {
+  return new Date(date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+};
 ---
 
 <BaseLayout title="Abhinav | Scaling Thoughts" description="ML Engineer at Amazon Special Projects - Foundation Models & Inference">
-  <div class="max-w-3xl mx-auto px-6 py-12">
-    <div class="prose prose-lg max-w-none">
-      <!-- Profile section -->
-      <div class="not-prose flex flex-col sm:flex-row gap-6 items-start mb-8">
-        <img
-          src="/profile.jpg"
-          alt="Abhinav"
-          class="w-32 h-32 rounded-full object-cover"
-        />
-        <div>
-          <h1 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Abhinav</h1>
-          <p class="text-gray-600 dark:text-gray-400">
-            Machine Learning Engineer — Foundation Models<br />
-            <strong>Amazon Special Projects (Grand Challenge)</strong>
-          </p>
-          <div class="flex gap-4 mt-3">
-            <a href="https://github.com/abhinavsv3" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent dark:hover:text-accent-dark">GitHub</a>
-            <a href="https://linkedin.com/in/abhinavsv3" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent dark:hover:text-accent-dark">LinkedIn</a>
-            <a href="https://scholar.google.com/citations?user=i_dHJ6cAAAAJ" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent dark:hover:text-accent-dark">Scholar</a>
-          </div>
+  <div class="max-w-5xl mx-auto px-6 py-16 sm:py-24">
+    <div class="grid lg:grid-cols-[320px_1fr] gap-12 lg:gap-16">
+      <!-- Left Column: Profile -->
+      <aside>
+        <a href="/about" class="block w-32 h-32 mb-6">
+          <img
+            src="/profile.jpg"
+            alt="Abhinav"
+            class="w-32 h-32 rounded-full object-cover hover:opacity-80 transition-opacity"
+          />
+        </a>
+        <h1 class="text-2xl font-bold tracking-tight text-ink dark:text-ink-dark mb-1">
+          Abhinav
+        </h1>
+        <p class="text-ink-muted dark:text-ink-dark-muted mb-6">
+          Machine Learning Engineer<br />
+          <span class="text-accent dark:text-accent-dark">Amazon Special Projects</span>
+        </p>
+
+        <p class="text-sm text-ink-muted dark:text-ink-dark-muted leading-relaxed mb-6">
+          I build large-scale inference systems for foundation models, focusing on the intersection of Generative AI and Biology. My recent work on cross-model translation and prompt optimization was presented at Amazon ML Conference 2025.
+        </p>
+
+        <div class="flex gap-4 text-sm mb-8">
+          <a href="https://github.com/abhinavsv3" target="_blank" rel="noopener noreferrer" class="link-subtle">GitHub</a>
+          <a href="https://linkedin.com/in/abhinavsv3" target="_blank" rel="noopener noreferrer" class="link-subtle">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=i_dHJ6cAAAAJ" target="_blank" rel="noopener noreferrer" class="link-subtle">Scholar</a>
         </div>
-      </div>
 
-      <p>
-        I build and optimize large-scale inference systems for foundation models within
-        <strong>Amazon's Special Projects incubator (Grand Challenge)</strong>. My work focuses on
-        the intersection of <strong>Generative AI and Biology</strong>, specifically engineering
-        systems that handle the computational complexity of multi-billion parameter models in
-        production environments.
-      </p>
+        <!-- Research Background -->
+        <div class="text-sm">
+          <h2 class="font-semibold text-ink dark:text-ink-dark mb-3">Background</h2>
+          <ul class="space-y-2 text-ink-muted dark:text-ink-dark-muted">
+            <li>MS Computer Science, U. of Florida</li>
+            <li>Research, UPC Barcelona <a href="https://hdl.handle.net/2117/88495" target="_blank" class="text-accent dark:text-accent-dark hover:underline">[Thesis]</a></li>
+            <li>Exchange, Tokyo City University</li>
+            <li>Visiting, IMSc Chennai</li>
+            <li>B.Tech CS, SASTRA University</li>
+          </ul>
+        </div>
+      </aside>
 
-      <p>
-        My recent research focuses on <strong>cross-model translation and prompt optimization</strong>—developing
-        methods to reduce inference latency and operational costs while maintaining model reliability.
-        I presented this work at the <strong>Amazon Machine Learning Conference (2025)</strong>.
-      </p>
+      <!-- Right Column: Recent Writing -->
+      <main>
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xs font-semibold uppercase tracking-widest text-ink-muted dark:text-ink-dark-muted">
+            Recent Writing
+          </h2>
+          <a href="/writing" class="text-xs text-accent dark:text-accent-dark hover:underline">
+            View all
+          </a>
+        </div>
 
-      <h2>Research Background</h2>
-      <p>
-        My approach to scalable systems is rooted in algorithmic research across
-        international institutions:
-      </p>
-
-      <ul>
-        <li>
-          <strong>Universitat Politècnica de Catalunya (UPC), Barcelona:</strong> Bachelor's thesis
-          on graph and matrix algorithms for high-dimensional data visualization, supervised by
-          <strong>Prof. Ricard Gavaldà</strong> and <strong>Prof. Marta Arias Vicente</strong>.
-          <a href="https://hdl.handle.net/2117/88495" target="_blank" rel="noopener noreferrer" class="text-accent dark:text-accent-dark">[Thesis]</a>
-        </li>
-        <li>
-          <strong>University of Florida:</strong> Master's in Computer Science. Research on
-          k-tuple harmonious coloring (NP-complete) with <strong>Prof. Alper Ungor</strong>.
-          Graduate TA for Analysis of Algorithms.
-        </li>
-        <li>
-          <strong>Tokyo City University:</strong> Exchange research under
-          <strong>Prof. Takamichi Hirata</strong> on algorithmic efficiency within hardware constraints.
-        </li>
-        <li>
-          <strong>Institute of Mathematical Sciences (IMSc), Chennai:</strong> Visiting research
-          student (Top 20 selection, India). Exposure to computational modeling and formal methods.
-        </li>
-        <li>
-          <strong>IIIT Kancheepuram:</strong> Research intern in graph algorithms.
-        </li>
-        <li>
-          <strong>SASTRA University, India:</strong> B.Tech in Computer Science and Engineering.
-        </li>
-      </ul>
-
-      <h2>Scaling Thoughts</h2>
-      <p>
-        This blog documents the engineering decisions behind production machine learning—from
-        low-level inference kernels to the architectural patterns of foundation models.
-      </p>
-
-      <hr class="my-8 border-gray-200 dark:border-gray-800" />
-
-      <p class="text-sm text-gray-500 dark:text-gray-400 italic">
-        Opinions expressed here are my own and do not represent my employer.
-      </p>
+        {recentPosts.length > 0 ? (
+          <div class="space-y-4">
+            {recentPosts.map((post) => (
+              <a href={getSlug(post)} class="card group block">
+                <article>
+                  <time
+                    datetime={post.frontmatter.pubDate}
+                    class="text-xs text-ink-muted dark:text-ink-dark-muted mb-2 block"
+                  >
+                    {formatDate(post.frontmatter.pubDate)}
+                  </time>
+                  <h3 class="font-semibold text-ink dark:text-ink-dark group-hover:text-accent dark:group-hover:text-accent-dark transition-colors mb-2">
+                    {post.frontmatter.title}
+                  </h3>
+                  {post.frontmatter.description && (
+                    <p class="text-sm text-ink-muted dark:text-ink-dark-muted">
+                      {post.frontmatter.description}
+                    </p>
+                  )}
+                </article>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p class="text-ink-muted dark:text-ink-dark-muted">
+            No posts yet. Check back soon!
+          </p>
+        )}
+      </main>
     </div>
   </div>
 </BaseLayout>
