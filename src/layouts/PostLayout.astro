@@ -81,9 +81,24 @@ const tocHeadings = headings.filter(h => h.depth === 2);
             )}
 
             <!-- Title -->
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-ink dark:text-ink-dark mb-6 leading-[1.1]">
-              {frontmatter.title}
-            </h1>
+            <div class="flex items-start gap-3 mb-6">
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-ink dark:text-ink-dark leading-[1.1]">
+                {frontmatter.title}
+              </h1>
+              <button
+                id="copy-link-btn"
+                class="mt-2 p-2 text-ink-muted dark:text-ink-dark-muted hover:text-accent dark:hover:text-accent-dark transition-colors rounded-lg hover:bg-surface-light dark:hover:bg-surface-dark flex-shrink-0"
+                title="Copy link"
+              >
+                <svg id="copy-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                </svg>
+                <svg id="check-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5"/>
+                </svg>
+              </button>
+            </div>
 
             <!-- Author & Date & Share -->
             <div class="flex items-center justify-between">
@@ -171,6 +186,32 @@ const tocHeadings = headings.filter(h => h.depth === 2);
 </style>
 
 <script>
+  // Copy link functionality
+  const copyBtn = document.getElementById('copy-link-btn');
+  const copyIcon = document.getElementById('copy-icon');
+  const checkIcon = document.getElementById('check-icon');
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        // Show check icon
+        copyIcon?.classList.add('hidden');
+        checkIcon?.classList.remove('hidden');
+        copyBtn.classList.add('text-accent', 'dark:text-accent-dark');
+
+        // Reset after 2 seconds
+        setTimeout(() => {
+          copyIcon?.classList.remove('hidden');
+          checkIcon?.classList.add('hidden');
+          copyBtn.classList.remove('text-accent', 'dark:text-accent-dark');
+        }, 2000);
+      } catch (err) {
+        console.error('Failed to copy:', err);
+      }
+    });
+  }
+
   // Scroll spy for TOC
   const tocLinks = document.querySelectorAll('.toc-link');
   const headings = document.querySelectorAll('#article-content h2');

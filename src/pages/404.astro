@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Random inference facts
+const facts = [
+  {
+    fact: "KV cache memory grows linearly with sequence length, but attention compute grows quadratically.",
+    source: "This is why long-context models need tricks like sliding window attention."
+  },
+  {
+    fact: "A batch size of 1 on an A100 typically achieves only 10-20% GPU utilization.",
+    source: "Batching isn't just nice-to-have — it's essential for efficiency."
+  },
+  {
+    fact: "Speculative decoding can achieve 2-3x speedup by drafting tokens with a smaller model.",
+    source: "The trick: verification is parallel, drafting is serial."
+  },
+  {
+    fact: "FP8 inference uses 50% less memory than FP16 with minimal quality loss on most tasks.",
+    source: "Quantization is often free performance."
+  },
+  {
+    fact: "The first token (time-to-first-token) is often 10x slower than subsequent tokens.",
+    source: "Prefill is compute-bound. Decode is memory-bound."
+  },
+  {
+    fact: "Continuous batching can improve throughput by 2-4x over static batching.",
+    source: "Don't wait for the longest sequence to finish."
+  }
+];
+
+const randomFact = facts[Math.floor(Math.random() * facts.length)];
+---
+
+<BaseLayout title="404 | Scaling Thoughts" description="Page not found">
+  <div class="max-w-lg mx-auto px-6 min-h-[calc(100vh-200px)] flex flex-col items-center justify-center text-center py-20">
+
+    <!-- 404 + Message on same line -->
+    <p class="text-lg text-ink-muted dark:text-ink-dark-muted mb-2">
+      <span class="font-semibold text-ink dark:text-ink-dark">404</span> — Page not found
+    </p>
+    <p class="text-sm text-ink-muted dark:text-ink-dark-muted mb-12">
+      The page you're looking for doesn't exist.
+    </p>
+
+    <!-- Divider -->
+    <div class="w-12 h-px bg-border-light dark:bg-border-dark mb-12"></div>
+
+    <!-- Inference fact -->
+    <div class="text-center mb-12">
+      <p class="text-xs text-ink-muted dark:text-ink-dark-muted uppercase tracking-wider mb-4">
+        💡 While you're here
+      </p>
+      <p class="text-sm text-ink dark:text-ink-dark mb-2">
+        {randomFact.fact}
+      </p>
+      <p class="text-xs text-ink-muted dark:text-ink-dark-muted">
+        {randomFact.source}
+      </p>
+    </div>
+
+    <!-- Navigation -->
+    <div class="flex items-center gap-6 text-sm">
+      <a
+        href="/"
+        class="text-accent dark:text-accent-dark hover:underline"
+      >
+        Go home
+      </a>
+      <span class="text-ink-muted dark:text-ink-dark-muted">—</span>
+      <a
+        href="/writing"
+        class="text-ink-muted dark:text-ink-dark-muted hover:text-ink dark:hover:text-ink-dark transition-colors"
+      >
+        Read blog posts
+      </a>
+    </div>
+  </div>
+</BaseLayout>

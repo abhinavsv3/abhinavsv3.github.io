@@ -3,7 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const posts = await Astro.glob('./blog/*.{md,mdx}');
 const recentPosts = posts
-  .sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf())
+  .filter((post) => post.frontmatter?.pubDate)
+  .sort((a, b) => {
+    const dateA = new Date(a.frontmatter.pubDate);
+    const dateB = new Date(b.frontmatter.pubDate);
+    return dateB.getTime() - dateA.getTime();
+  })
   .slice(0, 3);
 
 // Extract slug from file path
