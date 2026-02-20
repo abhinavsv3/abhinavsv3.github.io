@@ -66,11 +66,16 @@ const tocHeadings = headings.filter(h => h.depth === 2);
           <header class="mb-10">
             <!-- Tags -->
             {frontmatter.tags && frontmatter.tags.length > 0 && (
-              <div class="flex flex-wrap gap-2 mb-4">
-                {frontmatter.tags.map((tag) => (
-                  <span class="text-xs font-medium uppercase tracking-wider text-accent dark:text-accent-dark">
-                    {tag}
-                  </span>
+              <div class="flex flex-wrap items-center gap-2 mb-4">
+                {frontmatter.tags.map((tag, index) => (
+                  <>
+                    <span class="text-xs font-medium uppercase tracking-wider text-accent dark:text-accent-dark">
+                      {tag}
+                    </span>
+                    {index < frontmatter.tags.length - 1 && (
+                      <span class="text-ink-muted dark:text-ink-dark-muted">·</span>
+                    )}
+                  </>
                 ))}
               </div>
             )}

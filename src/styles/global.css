@@ -89,6 +89,31 @@
     @apply bg-transparent p-0;
   }
 
+  .prose table {
+    @apply w-full border-collapse my-6;
+  }
+
+  .prose thead {
+    @apply border-b-2 border-border-light dark:border-border-dark;
+  }
+
+  .prose th {
+    @apply text-left text-ink dark:text-ink-dark font-semibold py-3 px-4;
+    @apply text-sm uppercase tracking-wider;
+  }
+
+  .prose td {
+    @apply py-3 px-4 border-b border-border-light dark:border-border-dark;
+  }
+
+  .prose tbody tr:last-child td {
+    @apply border-b-0;
+  }
+
+  .prose tbody tr:hover {
+    @apply bg-surface-light dark:bg-surface-dark;
+  }
+
   .link {
     @apply text-accent dark:text-accent-dark hover:underline underline-offset-2;
   }
