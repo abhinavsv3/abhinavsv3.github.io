@@ -3,6 +3,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const publications = [
   {
+    title: "A Framework for Prompt Optimization and Translation Across Foundation Models",
+    authors: "Abhinav Shankaranarayanan Venkataraman, et al.",
+    venue: "Amazon Machine Learning Conference (AMLC)",
+    year: 2025,
+    citations: 0,
+    status: "Peer-reviewed",
+    abstract: "Presents a novel framework for optimizing and translating prompts across different foundation models, enabling efficient cross-model adaptation.",
+  },
+  {
     title: "Graph and Matrix Algorithms for Visualizing High Dimensional Data",
     authors: "Abhinav Shankaranarayanan Venkataraman",
     venue: "Bachelor's Thesis, Universitat Politècnica de Catalunya (UPC Barcelona)",
@@ -28,10 +37,16 @@ const publications = [
 
 const talks = [
   {
-    title: "Cross-Model Translation and Prompt Optimization",
+    title: "A Framework for Prompt Optimization and Translation Across Foundation Models",
     venue: "Amazon ML Conference 2025",
     year: 2025,
-    type: "Conference Talk",
+    type: "Spotlight Talk",
+  },
+  {
+    title: "Strategies for Improving Product Categorization Accuracy and Reducing Amazon Best Sellers Defect Rate",
+    venue: "Amazon Knowledge Conference",
+    year: 2021,
+    type: "Internal Conference Talk",
   },
 ];
 
@@ -126,6 +141,11 @@ const peerReview = [
               </p>
               <p class="text-sm text-ink-muted dark:text-ink-dark-muted mb-2">
                 <span class="text-ink dark:text-ink-dark">{pub.venue}</span> · {pub.year}
+                {pub.status && (
+                  <span class="ml-2 px-2 py-0.5 text-xs rounded-full bg-accent/10 text-accent dark:bg-accent-dark/10 dark:text-accent-dark">
+                    {pub.status}
+                  </span>
+                )}
                 {pub.citations > 0 && (
                   <span class="ml-2 text-accent dark:text-accent-dark">
                     {pub.citations} citations
