@@ -4,7 +4,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://abhinavsv3.github.io',
+  site: 'https://scalingthoughts.com',
   integrations: [tailwind(), mdx(), sitemap()],
   markdown: {
     shikiConfig: {
