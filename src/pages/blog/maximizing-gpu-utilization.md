@@ -191,4 +191,11 @@ The GPU efficiency problem is an engineering problem, not a hardware problem. Th
 
 ---
 
-*For implementation details on continuous batching and paged attention, see the vLLM paper. For broader infrastructure patterns, the Anyscale and Modal blogs have excellent practical guides.*
+## References
+
+- **[Efficient Memory Management for Large Language Model Serving with PagedAttention](https://arxiv.org/abs/2309.06180)** — The vLLM paper introducing PagedAttention for KV cache management (Kwon et al., SOSP 2023)
+- **[Orca: A Distributed Serving System for Transformer-Based Generative Models](https://www.usenix.org/conference/osdi22/presentation/yu)** — The original paper introducing continuous batching / iteration-level scheduling (Yu et al., OSDI 2022)
+- **[Accelerating LLM Decoding with Speculative Sampling](https://arxiv.org/abs/2302.01318)** — DeepMind's speculative decoding paper achieving 2-2.5x speedup on Chinchilla 70B (Chen et al., 2023)
+- **[Mastering LLM Techniques: Inference Optimization](https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/)** — NVIDIA's comprehensive guide covering KV caching, parallelism, and FlashAttention
+- **[How Continuous Batching Enables 23x Throughput in LLM Inference](https://www.anyscale.com/blog/continuous-batching-llm-inference)** — Anyscale's deep dive on continuous batching with benchmarks
+- **[High-Performance LLM Inference Guide](https://modal.com/docs/guide/high-performance-llm-inference)** — Modal's practical guide to inference optimization, including engine recommendations
