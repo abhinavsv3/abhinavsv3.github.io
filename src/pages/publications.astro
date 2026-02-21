@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const publications = [
+  {
+    title: "Graph and Matrix Algorithms for Visualizing High Dimensional Data",
+    authors: "Abhinav Shankaranarayanan Venkataraman",
+    venue: "Master's Thesis, Universitat Politècnica de Catalunya (UPC Barcelona)",
+    year: 2016,
+    citations: 0,
+    links: {
+      paper: "https://hdl.handle.net/2117/88495",
+    },
+    abstract: "Studies, implements, and compares several algorithms for visually representing highly dimensional data so that similar entities appear close together based on graph and matrix representation.",
+  },
+  {
+    title: "Effective Management of Bus Transportation Through Design of a Fuzzy Expert System",
+    authors: "Abhinav Shankaranarayanan Venkataraman, S. Anand",
+    venue: "Engineering, Computer Science",
+    year: 2015,
+    citations: 2,
+    links: {
+      paper: "https://www.semanticscholar.org/paper/EFFECTIVE-MANAGEMENT-OF-BUS-TRANSPORTATION-THROUGH-Venkataraman-Anand/e75f7b2b5f0b1a0a8f7a7b5d5f5b5a5a5a5a5a5a",
+    },
+    abstract: "A fuzzy expert system designed for bus management to provide threshold limits for accident prevention and expenditure optimization.",
+  },
+];
+
+const talks = [
+  {
+    title: "Cross-Model Translation and Prompt Optimization",
+    venue: "Amazon ML Conference 2025",
+    year: 2025,
+    type: "Conference Talk",
+  },
+  // Add more talks here
+];
+---
+
+<BaseLayout title="Publications | Scaling Thoughts" description="Research publications and conference talks by Abhinav">
+  <div class="max-w-4xl mx-auto px-6 py-16 sm:py-20">
+    <!-- Header -->
+    <header class="mb-12">
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-ink dark:text-ink-dark mb-4">
+        Publications & Talks
+      </h1>
+      <p class="text-ink-muted dark:text-ink-dark-muted">
+        Research publications, conference papers, and invited talks.
+      </p>
+      <p class="text-xs text-ink-muted dark:text-ink-dark-muted mt-2">
+        Also published as: Abhinav SV, Abhinav Shankar, Abhinav S V
+      </p>
+      <div class="mt-4 flex flex-wrap gap-4 text-sm">
+        <a
+          href="https://scholar.google.com/citations?user=i_dHJ6cAAAAJ"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-accent dark:text-accent-dark hover:underline"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+          </svg>
+          Google Scholar
+        </a>
+        <a
+          href="https://www.semanticscholar.org/author/Abhinav-Shankaranarayanan-Venkataraman/66533519"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-accent dark:text-accent-dark hover:underline"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm0 2.4c5.302 0 9.6 4.298 9.6 9.6s-4.298 9.6-9.6 9.6S2.4 17.302 2.4 12 6.698 2.4 12 2.4z"/>
+          </svg>
+          Semantic Scholar
+        </a>
+        <a
+          href="https://orcid.org/0000-0001-8643-7219"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-accent dark:text-accent-dark hover:underline"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/>
+          </svg>
+          ORCID
+        </a>
+      </div>
+    </header>
+
+    <!-- Publications Section -->
+    <section class="mb-16">
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-ink-muted dark:text-ink-dark-muted mb-6">
+        Publications
+      </h2>
+
+      {publications.length > 0 && publications[0].title !== "Your Paper Title Here" ? (
+        <div class="space-y-8">
+          {publications.map((pub) => (
+            <article class="border-l-2 border-border-light dark:border-border-dark pl-6 hover:border-accent dark:hover:border-accent-dark transition-colors">
+              <h3 class="font-semibold text-ink dark:text-ink-dark mb-1">
+                {pub.links?.paper ? (
+                  <a href={pub.links.paper} target="_blank" rel="noopener noreferrer" class="hover:text-accent dark:hover:text-accent-dark">
+                    {pub.title}
+                  </a>
+                ) : (
+                  pub.title
+                )}
+              </h3>
+              <p class="text-sm text-ink-muted dark:text-ink-dark-muted mb-2">
+                {pub.authors}
+              </p>
+              <p class="text-sm text-ink-muted dark:text-ink-dark-muted mb-2">
+                <span class="text-ink dark:text-ink-dark">{pub.venue}</span> · {pub.year}
+                {pub.citations > 0 && (
+                  <span class="ml-2 text-accent dark:text-accent-dark">
+                    {pub.citations} citations
+                  </span>
+                )}
+              </p>
+              {pub.abstract && (
+                <p class="text-sm text-ink-muted dark:text-ink-dark-muted mt-2">
+                  {pub.abstract}
+                </p>
+              )}
+              {pub.links && (
+                <div class="flex gap-4 mt-3 text-xs">
+                  {pub.links.paper && (
+                    <a href={pub.links.paper} target="_blank" rel="noopener noreferrer" class="text-accent dark:text-accent-dark hover:underline">
+                      Paper
+                    </a>
+                  )}
+                  {pub.links.code && (
+                    <a href={pub.links.code} target="_blank" rel="noopener noreferrer" class="text-accent dark:text-accent-dark hover:underline">
+                      Code
+                    </a>
+                  )}
+                  {pub.links.slides && (
+                    <a href={pub.links.slides} target="_blank" rel="noopener noreferrer" class="text-accent dark:text-accent-dark hover:underline">
+                      Slides
+                    </a>
+                  )}
+                </div>
+              )}
+            </article>
+          ))}
+        </div>
+      ) : (
+        <p class="text-ink-muted dark:text-ink-dark-muted italic">
+          Publications coming soon. See <a href="https://scholar.google.com/citations?user=i_dHJ6cAAAAJ" target="_blank" class="text-accent dark:text-accent-dark hover:underline">Google Scholar</a> for current list.
+        </p>
+      )}
+    </section>
+
+    <!-- Talks Section -->
+    <section class="mb-16">
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-ink-muted dark:text-ink-dark-muted mb-6">
+        Talks & Presentations
+      </h2>
+
+      <div class="space-y-4">
+        {talks.map((talk) => (
+          <div class="flex items-start justify-between gap-4 py-3 border-b border-border-light dark:border-border-dark last:border-0">
+            <div>
+              <h3 class="font-medium text-ink dark:text-ink-dark">
+                {talk.title}
+              </h3>
+              <p class="text-sm text-ink-muted dark:text-ink-dark-muted">
+                {talk.venue}
+              </p>
+            </div>
+            <div class="text-right flex-shrink-0">
+              <span class="text-sm text-ink-muted dark:text-ink-dark-muted">{talk.year}</span>
+              <p class="text-xs text-accent dark:text-accent-dark">{talk.type}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Thesis Section -->
+    <section>
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-ink-muted dark:text-ink-dark-muted mb-6">
+        Thesis
+      </h2>
+
+      <article class="card">
+        <h3 class="font-semibold text-ink dark:text-ink-dark mb-2">
+          <a
+            href="https://hdl.handle.net/2117/88495"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-accent dark:hover:text-accent-dark"
+          >
+            Master's Thesis — UPC Barcelona
+          </a>
+        </h3>
+        <p class="text-sm text-ink-muted dark:text-ink-dark-muted mb-2">
+          Universitat Politècnica de Catalunya · 2016
+        </p>
+        <p class="text-sm text-ink-muted dark:text-ink-dark-muted">
+          Research conducted at the Barcelona Supercomputing Center.
+        </p>
+      </article>
+    </section>
+  </div>
+</BaseLayout>
