@@ -1,6 +1,6 @@
 ---
 layout: '../../layouts/PostLayout.astro'
-title: 'Speculative Decoding: Trading Compute for Latency'
+title: 'Speculative Decoding: Draft Once, Verify in Parallel'
 description: "LLM decoding is sequential and memory-bound. Speculative decoding breaks this by guessing multiple tokens and verifying in parallel. Here's how it works and when to use it."
 pubDate: '2026-02-27'
 tags: ['machine learning', 'inference', 'optimization']
