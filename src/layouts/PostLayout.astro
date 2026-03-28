@@ -32,9 +32,34 @@ const author = frontmatter.author || 'Abhinav';
 
 // Filter to only h2 headings for the TOC
 const tocHeadings = headings.filter(h => h.depth === 2);
+
+// JSON-LD structured data for SEO
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": frontmatter.title,
+  "description": frontmatter.description,
+  "datePublished": frontmatter.pubDate,
+  "dateModified": frontmatter.updatedDate || frontmatter.pubDate,
+  "author": {
+    "@type": "Person",
+    "name": "Abhinav Shankaranarayanan Venkataraman",
+    "url": "https://scalingthoughts.com/about"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Abhinav Shankaranarayanan Venkataraman"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://scalingthoughts.com${Astro.url.pathname}`
+  },
+  "keywords": frontmatter.tags?.join(", ")
+};
 ---
 
 <BaseLayout title={`${frontmatter.title} | Scaling Thoughts`} description={frontmatter.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <article>
     <div class="max-w-6xl mx-auto px-6 py-16 sm:py-20">
       <div class="lg:grid lg:grid-cols-[200px_1fr] lg:gap-12">

@@ -4,11 +4,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const publications = [
   {
     title: "A Framework for Prompt Optimization and Translation Across Foundation Models",
+    authors: "Abhinav Shankaranarayanan Venkataraman, Athanasios Nikolakopoulos, Vishwanath Kumaraswamy, Tao Zhang, Sarath Chander, Rohit Saboo, Suleiman A. Khan",
+    venue: "International Conference on Learning Representations (ICLR) 2026 Workshop RSI",
+    year: 2026,
+    citations: 0,
+    status: "Peer-reviewed",
+    links: {
+      paper: "https://openreview.net/forum?id=gOTCn5uZeE",
+    },
+    abstract: "A methodology to automatically translate prompts across foundation models by preserving task semantics and re-optimizing only model-specific interfaces, matching expert performance while cutting manual effort by ~97%.",
+  },
+  {
+    title: "Prompt Translation Across Foundation Models: A Structured Optimization Framework",
     authors: "Abhinav Shankaranarayanan Venkataraman, et al.",
     venue: "Amazon Machine Learning Conference (AMLC)",
     year: 2025,
     citations: 0,
-    status: "Peer-reviewed",
+    status: "Peer-reviewed (Internal)",
     abstract: "Presents a novel framework for optimizing and translating prompts across different foundation models, enabling efficient cross-model adaptation.",
   },
   {
@@ -38,7 +50,13 @@ const publications = [
 const talks = [
   {
     title: "A Framework for Prompt Optimization and Translation Across Foundation Models",
-    venue: "Amazon ML Conference 2025",
+    venue: "ICLR 2026 Workshop RSI",
+    year: 2026,
+    type: "Poster Presentation",
+  },
+  {
+    title: "Prompt Translation Across Foundation Models: A Structured Optimization Framework",
+    venue: "Amazon Machine Learning Conference (AMLC)",
     year: 2025,
     type: "Spotlight Talk",
   },
@@ -52,15 +70,46 @@ const talks = [
 
 const peerReview = [
   {
+    venue: "ICLR 2026 Workshop RSI",
+    role: "Reviewer",
+    year: 2026,
+    status: "Completed",
+  },
+  {
     venue: "Amazon Machine Learning Conference (AMLC)",
     role: "Reviewer — 4 papers reviewed",
     year: 2025,
     status: "Completed",
   },
 ];
+
+// JSON-LD structured data for publications
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Abhinav Shankaranarayanan Venkataraman",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=i_dHJ6cAAAAJ",
+      "https://orcid.org/0000-0001-8643-7219",
+      "https://openreview.net/profile?id=~Abhinav_Shankaranarayanan_Venkataraman1"
+    ]
+  },
+  "hasPart": publications.filter(p => p.links?.paper).map(pub => ({
+    "@type": "ScholarlyArticle",
+    "headline": pub.title,
+    "author": pub.authors.split(", ").map(name => ({ "@type": "Person", "name": name.trim() })),
+    "datePublished": pub.year.toString(),
+    "publisher": pub.venue,
+    "description": pub.abstract,
+    "url": pub.links?.paper
+  }))
+};
 ---
 
 <BaseLayout title="Publications | Scaling Thoughts" description="Research publications and conference talks by Abhinav">
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <div class="max-w-4xl mx-auto px-6 py-16 sm:py-20">
     <!-- Header -->
     <header class="mb-12">

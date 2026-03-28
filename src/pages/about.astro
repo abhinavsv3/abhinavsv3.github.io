@@ -1,8 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abhinav Shankaranarayanan Venkataraman",
+  "alternateName": ["Abhinav SV", "Abhinav Shankar", "Abhinav S V"],
+  "jobTitle": "Machine Learning Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Amazon"
+  },
+  "url": "https://scalingthoughts.com/about",
+  "sameAs": [
+    "https://github.com/abhinavsv3",
+    "https://linkedin.com/in/abhinavsv3",
+    "https://scholar.google.com/citations?user=i_dHJ6cAAAAJ",
+    "https://orcid.org/0000-0001-8643-7219",
+    "https://openreview.net/profile?id=~Abhinav_Shankaranarayanan_Venkataraman1"
+  ],
+  "knowsAbout": ["Machine Learning", "Foundation Models", "LLM Inference", "Prompt Optimization"]
+};
 ---
 
 <BaseLayout title="About | Scaling Thoughts" description="ML Engineer at Amazon Special Projects - Foundation Models & Inference">
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <div class="max-w-3xl mx-auto px-6 py-16 sm:py-24">
     <!-- Header -->
     <header class="mb-12">
@@ -50,7 +72,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p>
           My recent research focuses on <strong class="text-ink dark:text-ink-dark">cross-model translation and prompt optimization</strong>—developing
           methods to reduce inference latency and operational costs while maintaining model reliability.
-          I presented this work at the <strong class="text-ink dark:text-ink-dark">Amazon Machine Learning Conference (2025)</strong>.
+          This work was published at <strong class="text-ink dark:text-ink-dark">ICLR 2026</strong>
+          (<a href="https://openreview.net/forum?id=gOTCn5uZeE" target="_blank" rel="noopener noreferrer" class="text-accent dark:text-accent-dark hover:underline">paper</a>).
         </p>
       </div>
     </section>
