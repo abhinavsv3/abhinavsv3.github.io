@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://scalingthoughts.com',
+  trailingSlash: 'always',
   integrations: [tailwind(), mdx(), sitemap()],
   markdown: {
     shikiConfig: {

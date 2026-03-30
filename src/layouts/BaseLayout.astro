@@ -9,7 +9,12 @@ interface Props {
 }
 
 const { title, description = 'Thoughts on technology, engineering, and building things.' } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Force trailing slash on canonical URL for SEO consistency
+const pathname = Astro.url.pathname.endsWith('/')
+  ? Astro.url.pathname
+  : Astro.url.pathname + '/';
+const canonicalURL = new URL(pathname, Astro.site);
 ---
 
 <!doctype html>
