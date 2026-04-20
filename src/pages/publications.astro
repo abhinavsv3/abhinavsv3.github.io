@@ -11,6 +11,7 @@ const publications = [
     status: "Peer-reviewed",
     links: {
       paper: "https://openreview.net/forum?id=gOTCn5uZeE",
+      amazon: "https://www.amazon.science/publications/a-framework-for-prompt-optimization-and-translation-across-foundation-models",
     },
     abstract: "A methodology to automatically translate prompts across foundation models by preserving task semantics and re-optimizing only model-specific interfaces, matching expert performance while cutting manual effort by ~97%.",
   },
@@ -170,6 +171,17 @@ const jsonLd = {
           </svg>
           OpenReview
         </a>
+        <a
+          href="https://www.amazon.science/author/abhinav-shankaranarayanan-venkataraman"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-accent dark:text-accent-dark hover:underline"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.685zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.872-1.234-1.276-1.814-2.108-1.734 1.767-2.962 2.297-5.209 2.297-2.66 0-4.731-1.641-4.731-4.927 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.891 5.942-1.095v-.41c0-.753.06-1.642-.384-2.294-.385-.579-1.124-.82-1.775-.82-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.582l-3.061-.333c-.259-.056-.548-.266-.472-.661C5.855 2.544 8.658 1.5 11.17 1.5c1.282 0 2.957.341 3.969 1.311 1.283 1.199 1.16 2.799 1.16 4.541v4.115c0 1.237.513 1.781 .995 2.449.17.239.207.525-.007.702l-1.143.977zm2.849 1.877c-2.23 1.648-5.46 2.526-8.242 2.526-3.897 0-7.405-1.441-10.057-3.838-.208-.188-.022-.445.228-.298 2.865 1.667 6.408 2.669 10.065 2.669 2.468 0 5.183-.512 7.681-1.571.377-.161.694.247.325.512zm.931-1.058c-.284-.365-1.876-.173-2.593-.087-.218.026-.251-.163-.055-.3 1.269-.893 3.353-.635 3.596-.336.242.3-.064 2.389-1.256 3.386-.183.153-.357.072-.276-.131.268-.669.87-2.167.584-2.532z"/>
+          </svg>
+          Amazon Science
+        </a>
       </div>
     </header>
 
@@ -228,6 +240,11 @@ const jsonLd = {
                   {pub.links.slides && (
                     <a href={pub.links.slides} target="_blank" rel="noopener noreferrer" class="text-accent dark:text-accent-dark hover:underline">
                       Slides
+                    </a>
+                  )}
+                  {pub.links.amazon && (
+                    <a href={pub.links.amazon} target="_blank" rel="noopener noreferrer" class="text-accent dark:text-accent-dark hover:underline">
+                      Amazon Science
                     </a>
                   )}
                 </div>

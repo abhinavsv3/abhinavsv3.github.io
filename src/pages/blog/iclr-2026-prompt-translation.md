@@ -109,7 +109,7 @@ Open questions we're exploring:
 
 ## Read the Paper
 
-The full paper is available on [OpenReview](https://openreview.net/forum?id=gOTCn5uZeE).
+The full paper is available on [OpenReview](https://openreview.net/forum?id=gOTCn5uZeE) and [Amazon Science](https://www.amazon.science/publications/a-framework-for-prompt-optimization-and-translation-across-foundation-models).
 
 If you're working on similar problems (prompt portability, cross-model evaluation, or production LLM systems), I'd love to hear about your experience.
 
@@ -131,5 +131,5 @@ If you find this work useful, please cite:
 
 ## References
 
-1. Venkataraman, A.S., Nikolakopoulos, A.N., et al., "A Framework for Prompt Optimization and Translation Across Foundation Models" - ICLR 2026 RSI Workshop - https://openreview.net/forum?id=gOTCn5uZeE
+1. Venkataraman, A.S., Nikolakopoulos, A.N., et al., "A Framework for Prompt Optimization and Translation Across Foundation Models" - ICLR 2026 RSI Workshop - [OpenReview](https://openreview.net/forum?id=gOTCn5uZeE) | [Amazon Science](https://www.amazon.science/publications/a-framework-for-prompt-optimization-and-translation-across-foundation-models)
 2. Related posts: [Chat Templates](/blog/chat-templates-hidden-interface/), [Structural Conventions](/blog/structural-conventions-across-models/)
