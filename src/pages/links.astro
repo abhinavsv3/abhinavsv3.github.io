@@ -1,0 +1,179 @@
+---
+import QRCode from 'qrcode';
+
+const links = [
+  {
+    label: 'Paper',
+    sublabel: 'amazon.science',
+    url: 'https://www.amazon.science/publications/a-framework-for-prompt-optimization-and-translation-across-foundation-models',
+    icon: '📄',
+  },
+  {
+    label: 'Paper & Reviews',
+    sublabel: 'openreview.net',
+    url: 'https://openreview.net/forum?id=gOTCn5uZeE',
+    icon: '🔬',
+  },
+  {
+    label: 'LinkedIn',
+    sublabel: 'linkedin.com/in/abhinavsv3',
+    url: 'https://www.linkedin.com/in/abhinavsv3/',
+    icon: '💼',
+  },
+];
+
+const qrSvgs = await Promise.all(
+  links.map(link =>
+    QRCode.toString(link.url, {
+      type: 'svg',
+      width: 280,
+      margin: 2,
+      color: { dark: '#0f172a', light: '#ffffff' },
+    })
+  )
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="robots" content="noindex" />
+    <title>Abhinav S V — Links</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        min-height: 100dvh;
+        background: #0f172a;
+        color: #f8fafc;
+        font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1.25rem 3rem;
+        gap: 0;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .name {
+        font-size: 1.375rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: #f8fafc;
+        margin-bottom: 0.25rem;
+      }
+
+      .role {
+        font-size: 0.875rem;
+        color: #94a3b8;
+        letter-spacing: 0.01em;
+      }
+
+      .paper-title {
+        margin-top: 0.75rem;
+        font-size: 0.8rem;
+        color: #64748b;
+        max-width: 280px;
+        line-height: 1.5;
+      }
+
+      .divider {
+        width: 40px;
+        height: 2px;
+        background: #334155;
+        border-radius: 1px;
+        margin: 1.5rem auto;
+      }
+
+      .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .card {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+      }
+
+      .card-label {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #0f172a;
+        letter-spacing: -0.01em;
+      }
+
+      .card-sublabel {
+        font-size: 0.75rem;
+        color: #64748b;
+        margin-top: -0.5rem;
+      }
+
+      .qr-wrap {
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #ffffff;
+      }
+
+      .qr-wrap svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .footer {
+        margin-top: 2rem;
+        text-align: center;
+        font-size: 0.75rem;
+        color: #334155;
+      }
+
+      .footer a {
+        color: #475569;
+        text-decoration: none;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="name">Abhinav Shankaranarayanan Venkataraman</div>
+      <div class="role">ML Engineer · Amazon Special Projects</div>
+      <div class="paper-title">A Framework for Prompt Optimization and Translation Across Foundation Models · ICLR 2026</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="cards">
+      {links.map((link, i) => (
+        <div class="card">
+          <div class="card-label">{link.icon} {link.label}</div>
+          <div class="card-sublabel">{link.sublabel}</div>
+          <div class="qr-wrap" set:html={qrSvgs[i]} />
+        </div>
+      ))}
+    </div>
+
+    <div class="footer">
+      <a href="https://www.scalingthoughts.com">scalingthoughts.com</a>
+    </div>
+  </body>
+</html>
